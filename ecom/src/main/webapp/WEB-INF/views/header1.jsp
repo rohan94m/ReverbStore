@@ -1,31 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Online Guitar Store</title>
-
-    <!-- Bootstrap -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-    <![endif]-->
-    <style>
-      .carousel-inner > .item > img,
-      .carousel-inner > .item > a > img {
-      
-      width:45%;
-      margin: auto;
-      }
+<style>
       .navbar {
       margin-bottom: 0;
       }
@@ -34,8 +7,8 @@
     
 }
     </style>
-  </head>
-  <body>
+  
+  
     <!-- Navigation -->
     
     <nav class="navbar navbar-inverse" role="navigation">
@@ -58,18 +31,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white">Shop by Category <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="dropdown-header" style="font-size:18px"><strong>Guitars</strong></li>
-                          <li><a href="guitars">Acoustic</a></li>
-                          <li><a href="guitars">Electric</a></li>
-                          <li><a href="guitars">Semi-Acoustic</a></li>
+                          <li><a href="guitars#section1">Acoustic</a></li>
+                          <li><a href="guitars#section2">Electric</a></li>
+                          <li><a href="guitars#section3">Bass</a></li>
                           <li class="dropdown-header" style="font-size:18px"><strong>Amplifiers/Pedals</strong></li>
-                          <li><a href="ampsandpedals">Amps</a></li>
-                          <li><a href="ampsandpedals">Effect Pedals</a></li>
-                          <li><a href="ampsandpedals">Processors</a></li>
+                          <li><a href="ampsandpedals#section1">Amps</a></li>
+                          <li><a href="ampsandpedals#section2">Effect Pedals</a></li>
+                          <li><a href="ampsandpedals#section3">Processors</a></li>
                           <li class="dropdown-header" style="font-size:18px"><strong>Accesories</strong></li>
-                          <li><a href="accesories">Capo</a></li>
-                          <li><a href="accesories">Picks</a></li><li><a href="#">Amps</a></li>
-                          <li><a href="accesories">Cables</a></li><li><a href="#">Amps</a></li>
-                          <li><a href="accesories">Guitar Covers</a></li>
+                          <li><a href="accesories#section1">Capo</a></li>
+                          <li><a href="accesories#section2">Picks</a></li><li><a href="#">Amps</a></li>
+                          <li><a href="accesories#section3">Cables</a></li><li><a href="#">Amps</a></li>
+                          <li><a href="accesories#section4">Guitar Covers</a></li>
                         </ul>
 
                     </li> 
@@ -109,6 +82,3 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<c:url value="/resources/js/jquery.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-    
-  </body>
-</html>

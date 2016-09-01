@@ -86,25 +86,28 @@
     <br>
 
     <!--Carousel-->
+    <br>
+    <br>
     
     <!-- Images -->
 
     <div class="container">
     
       <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
+           <div class="col-md-2 col-sm-2"></div>
+          <div class="col-md-3 col-sm-3">
             <img src="<c:url value="/resources/img/fender.jpg"/>" alt="fender" class="img-circle"/>
             <h2>Fender Guitars</h2>
             <p>Exclusive Limited edition</p>
             <a href="#" class="btn btn-default">Shop Now</a>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-3 col-sm-3 col-xs-12">
            <img src="<c:url value="/resources/img/epiphone.png"/>" alt="epiphone" class="img-circle"/>
            <h2>Epiphone Guitars</h2>
             <p>15% Discount on latest Epiphone Guitar</p>
             <a href="#" class="btn btn-default">Shop Now</a>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="col-md-3 col-sm-3 col-xs-12">
             <img src="<c:url value="/resources/img/marshall.jpg"/>" alt="marshall" class="img-circle"/>
             <h2>Marshall Amps</h2>
             <p>Acoustic series amps from Marshall</p>
@@ -112,6 +115,7 @@
           </div>
       </div>
     </div>
+   
     <!--Images-->
 
     <!--Footer-->

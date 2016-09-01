@@ -22,26 +22,33 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-   
+   <style>
+    body {
+      position: relative;
+  }
+   </style>
   </head>
   <body>
     <!-- Navigation -->
 <%@ include file="header1.jsp" %>
- 
- <div class="container">
+ <br>
+ <!-- Section 1 -->
+ <div class="container" id="section1">
 
         <div class="row">
 
-            <div class="col-md-3">
-                <p class="lead">Product Category</p>
+            <div class="col-md-3 scrollable" id="myscrollbar">
+                <p class="lead text-uppercase">Capos</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Capo</a>
-                    <a href="#" class="list-group-item">Picks</a>
-                    <a href="#" class="list-group-item">Covers</a>
-                    <a href="#" class="list-group-item">Cables</a>
+                    <a href="#section1" class="list-group-item" style="background:#DCDCDC">Capo</a>
+                    <a href="#section2" class="list-group-item">Picks</a>
+                    <a href="#section3" class="list-group-item">Covers</a>
+                    <a href="#section4" class="list-group-item">Cables</a>
                 </div>
             </div>
-
+        
+       
+		
             <div class="col-md-9">
 
                 <div class="row jumbotron">
@@ -52,6 +59,7 @@
               </div>
               
 		</div>
+		<br>
                 <div class="row">
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
@@ -59,7 +67,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="#">First Product</a>
+                                <h4><a href="product">First Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -72,7 +80,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="#">Second Product</a>
+                                <h4><a href="product">Second Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -85,7 +93,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="#">Third Product</a>
+                                <h4><a href="product">Third Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -98,7 +106,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$84.99</h4>
-                                <h4><a href="#">Fourth Product</a>
+                                <h4><a href="product">Fourth Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -111,7 +119,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$94.99</h4>
-                                <h4><a href="#">Fifth Product</a>
+                                <h4><a href="product">Fifth Product</a>
                                 </h4>
                                 <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
@@ -123,6 +131,333 @@
                 </div>
 
             </div>
+            
+            <!-- section 1 -->
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            
+            <!-- Section 2 -->
+ <div class="container" id="section2">
+
+        <div class="row">
+
+            <div class="col-md-3 scrollable" id="myscrollbar">
+                <p class="lead text-uppercase">Picks</p>
+                <div class="list-group">
+                    <a href="#section1" class="list-group-item">Capo</a>
+                    <a href="#section2" class="list-group-item" style="background:#DCDCDC">Picks</a>
+                    <a href="#section3" class="list-group-item">Covers</a>
+                    <a href="#section4" class="list-group-item">Cables</a>
+                </div>
+            </div>
+        
+       
+		
+            <div class="col-md-9">
+
+                <div class="row jumbotron">
+
+                     <img  src="http://placehold.it/800x300" alt="">
+                          
+                </div>
+              </div>
+              
+		</div>
+		<br>
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="product">First Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="product">Second Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="product">Third Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$84.99</h4>
+                                <h4><a href="product">Fourth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$94.99</h4>
+                                <h4><a href="product">Fifth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                   
+                </div>
+
+            </div>
+            
+            <!-- section 2 -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- section 3 -->
+            
+ <div class="container" id="section3">
+
+        <div class="row">
+
+            <div class="col-md-3 scrollable" id="myscrollbar">
+                <p class="lead text-uppercase">Covers</p>
+                <div class="list-group">
+                    <a href="#section1" class="list-group-item" >Capo</a>
+                    <a href="#section2" class="list-group-item">Picks</a>
+                    <a href="#section3" class="list-group-item" style="background:#DCDCDC">Covers</a>
+                    <a href="#section4" class="list-group-item">Cables</a>
+                </div>
+            </div>
+        
+       
+		
+            <div class="col-md-9">
+
+                <div class="row jumbotron">
+
+                     <img  src="http://placehold.it/800x300" alt="">
+                          
+                </div>
+              </div>
+              
+		</div>
+		<br>
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="product">First Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="product">Second Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="product">Third Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$84.99</h4>
+                                <h4><a href="product">Fourth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$94.99</h4>
+                                <h4><a href="product">Fifth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                   
+                </div>
+
+            </div>
+            
+            
+            
+            <!-- section 3 -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- section 4 -->
+            
+            
+ <div class="container" id="section4">
+
+        <div class="row">
+
+            <div class="col-md-3 scrollable" id="myscrollbar">
+                <p class="lead text-uppercase">Cables</p>
+                <div class="list-group">
+                    <a href="#section1" class="list-group-item" >Capo</a>
+                    <a href="#section2" class="list-group-item">Picks</a>
+                    <a href="#section3" class="list-group-item" >Covers</a>
+                    <a href="#section4" class="list-group-item" style="background:#DCDCDC">Cables</a>
+                </div>
+            </div>
+        
+       
+		
+            <div class="col-md-9">
+
+                <div class="row jumbotron">
+
+                     <img  src="http://placehold.it/800x300" alt="">
+                          
+                </div>
+              </div>
+              
+		</div>
+		<br>
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="product">First Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="product">Second Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="product">Third Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$84.99</h4>
+                                <h4><a href="product">Fourth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$94.99</h4>
+                                <h4><a href="product">Fifth Product</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                   
+                </div>
+
+            </div>
+            
+            
+            
+            <!-- section 4 -->
+            
 
 
     <!--Footer-->
@@ -139,7 +474,36 @@
 
 
     <!-- jQuery and js included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
+    <script>
     
+   
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".scroll", offset: 50});
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myscrollbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+</script>
     
     
   </body>

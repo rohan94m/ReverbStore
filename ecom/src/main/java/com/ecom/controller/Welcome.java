@@ -49,7 +49,7 @@ class Welcome
 	@RequestMapping("/product")
 	public ModelAndView product()
 	{
-		return new ModelAndView("header1");
+		return new ModelAndView("product");
 		
 	}
 	
