@@ -12,7 +12,7 @@
 
     <!-- Bootstrap -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    
+<link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">    
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -31,14 +31,14 @@
   <body>
     <!-- Navigation -->
 <%@ include file="header1.jsp" %>
- <br>
+ 
  <!-- Section 1 -->
  <div class="container" id="section1">
-
+<br>
         <div class="row">
 
             <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead text-uppercase">Amps</p>
+                <p class="lead text-uppercase"><strong>Amps</strong></p>
                 <div class="list-group">
                     <a href="#section1" class="list-group-item" style="background:#DCDCDC">Amps</a>
                     <a href="#section2" class="list-group-item">Effect Pedals</a>
@@ -53,7 +53,7 @@
 
                 <div class="row jumbotron">
 
-                     <img  src="http://placehold.it/800x300" alt="">
+                     <img class="img-responsive" src="<c:url value="/resources/img/amps/ampcover.jpg"/>" alt="">
                           
                 </div>
               </div>
@@ -133,19 +133,19 @@
             </div>
             
             <!-- section 1 -->
-            <br>
-            <br>
-            <br>
-            <br>
+            
             
             
             <!-- Section 2 -->
  <div class="container" id="section2">
-
+<br>
+            <br>
+            <br>
+            <br>
         <div class="row">
 
             <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead text-uppercase">EFFECT PEDALs</p>
+                <p class="lead text-uppercase"><strong>EFFECT PEDALs</strong></p>
                 <div class="list-group">
                     <a href="#section1" class="list-group-item">Amps</a>
                     <a href="#section2" class="list-group-item" style="background:#DCDCDC">Effect Pedals </a>
@@ -160,7 +160,7 @@
 
                 <div class="row jumbotron">
 
-                     <img  src="http://placehold.it/800x300" alt="">
+                     <img class="img-responsive" src="<c:url value="/resources/img/amps/processorcover.jpg"/>" alt="">
                           
                 </div>
               </div>
@@ -240,18 +240,18 @@
             </div>
             
             <!-- section 2 -->
-            <br>
-            <br>
-            <br>
-            <br>
+           
             <!-- section 3 -->
             
  <div class="container" id="section3">
-
+ <br>
+            <br>
+            <br>
+            <br>
         <div class="row">
 
             <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead">PROCESSORS</p>
+                <p class="lead"><strong>PROCESSORS</strong></p>
                 <div class="list-group">
                     <a href="#section1" class="list-group-item" >Amps</a>
                     <a href="#section2" class="list-group-item">Effect Pedals</a>
@@ -266,7 +266,7 @@
 
                 <div class="row jumbotron">
 
-                     <img  src="http://placehold.it/800x300" alt="">
+                     <img class="img-responsive" src="<c:url value="/resources/img/amps/pedalcover.jpg"/>" alt="">
                           
                 </div>
               </div>

@@ -41,7 +41,7 @@
      </property>
         <property name="annotatedClasses">
       <list>
-        
+        <value>com.ecom.model.Product</value>
 
          </list>
     </property>

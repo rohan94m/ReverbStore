@@ -11,8 +11,9 @@
   
     <!-- Navigation -->
     
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+        <div class="row">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
@@ -40,8 +41,8 @@
                           <li><a href="ampsandpedals#section3">Processors</a></li>
                           <li class="dropdown-header" style="font-size:18px"><strong>Accesories</strong></li>
                           <li><a href="accesories#section1">Capo</a></li>
-                          <li><a href="accesories#section2">Picks</a></li><li><a href="#">Amps</a></li>
-                          <li><a href="accesories#section3">Cables</a></li><li><a href="#">Amps</a></li>
+                          <li><a href="accesories#section2">Picks</a></li>
+                          <li><a href="accesories#section3">Cables</a></li>
                           <li><a href="accesories#section4">Guitar Covers</a></li>
                         </ul>
 
@@ -67,9 +68,18 @@
                  </ul>
             </div>
             <!-- /.navbar-collapse -->
+        
         </div>
         <!-- /.container -->
+        
+        </div>
+        
     </nav>
+    <div class="container">
+    <br>
+        <br>
+        <br>
+    </div>
     
     
    
@@ -82,3 +92,4 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<c:url value="/resources/js/jquery.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+    

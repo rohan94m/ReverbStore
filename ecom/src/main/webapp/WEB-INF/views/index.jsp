@@ -11,6 +11,7 @@
 
     <!-- Bootstrap -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
     
 
 
@@ -28,7 +29,7 @@
       width:45%;
       margin: auto;
       }
-    
+   
     
 }
     </style>
@@ -53,21 +54,32 @@
     
         <div class="item active">
     
-          <img src="<c:url value="/resources/img/slash.jpg"/>"/>
+          <a href="product"><img src="<c:url value="/resources/img/slash.jpg"/>"/></a>
+          
       
         </div>
 
         <div class="item">
           
-          <img src="<c:url value="/resources/img/fender-malibu.jpg"/>"/>
+           <a href="product"><img src="<c:url value="/resources/img/fender-malibu.jpg"/>"/></a>
+           <div class="carousel-caption">
+        <h3 style="color:dimgrey">Fender Malibu</h3>
+        
+      </div>
         </div>
 
         <div class="item">
-          <img src="<c:url value="/resources/img/zvex-sonar.jpg"/>"/>
+           <a href="product"><img src="<c:url value="/resources/img/zvex-sonar.jpg"/>"/></a>
+           <div class="carousel-caption">
+        <h3 style="color:dimgrey">Zvex-Sonar Pedal</h3>
+        
+      </div>
         </div>
 
         <div class="item">
-          <img src="<c:url value="/resources/img/epiphone-lp.jpg"/>"/>
+        
+           <a href="product"><img src="<c:url value="/resources/img/epiphone-lp.jpg"/>"/></a>
+           
         </div>
       </div>
 
@@ -81,34 +93,43 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <br>
-    <br>
-    <br>
+    
 
     <!--Carousel-->
-    <br>
-    <br>
+    
     
     <!-- Images -->
 
-    <div class="container">
+    <div class="container-fluid" >
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row"><div class="col-md-2 col-sm-2"></div><div class="col-md-3 col-sm-3"><h4><strong>FEATURED</strong></h4></div>
     
-      <div class="row">
+    <br>
+    <br>
+    
+    </div>
+    
+      <div class="row" >
            <div class="col-md-2 col-sm-2"></div>
           <div class="col-md-3 col-sm-3">
-            <img src="<c:url value="/resources/img/fender.jpg"/>" alt="fender" class="img-circle"/>
+            <img id="zoomimg" src="<c:url value="/resources/img/fender.jpg"/>" alt="fender" class="img-circle"/>
+            
             <h2>Fender Guitars</h2>
             <p>Exclusive Limited edition</p>
             <a href="#" class="btn btn-default">Shop Now</a>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
-           <img src="<c:url value="/resources/img/epiphone.png"/>" alt="epiphone" class="img-circle"/>
+           <img id="zoomimg2" src="<c:url value="/resources/img/epiphone.png"/>" alt="epiphone" class="img-circle"/>
            <h2>Epiphone Guitars</h2>
             <p>15% Discount on latest Epiphone Guitar</p>
             <a href="#" class="btn btn-default">Shop Now</a>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
-            <img src="<c:url value="/resources/img/marshall.jpg"/>" alt="marshall" class="img-circle"/>
+            <img id="zoomimg3" src="<c:url value="/resources/img/marshall.jpg"/>" alt="marshall" class="img-circle"/>
             <h2>Marshall Amps</h2>
             <p>Acoustic series amps from Marshall</p>
             <a href="#" class="btn btn-default">Shop Now</a>
@@ -117,14 +138,25 @@
     </div>
    
     <!--Images-->
+    
+    <!-- Latest Products -->
+    
+    
+    
+    
+    
+    
 
     <!--Footer-->
+    <div class="container">
     <br>
     <br>
     <br>
     <br>
     <br>
-  
+    <br>
+    <br>
+  </div>
     <!--Footer -->
 	<%@ include file="footer.jsp" %>
 
@@ -132,7 +164,53 @@
 
 
     <!-- jQuery and JS included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
-  	  
+  	  <script>
+    $('#zoomimg').mouseenter(function() 
+    	       {
+    	       
+    	          $(this).css("cursor","pointer");
+    	           $(this).animate({width: "50%", height: "50%"}, 'slow');
+
+
+    	       });
+    	    
+    	    $('#zoomimg').mouseleave(function()
+    	      {   
+    	          $(this).animate({width: "40%"}, 'slow');
+    	   });
+    
+    	    
+    	    
+    	    $('#zoomimg2').mouseenter(function() 
+    	    	       {
+    	    	       
+    	    	          $(this).css("cursor","pointer");
+    	    	           $(this).animate({width: "50%", height: "50%"}, 'slow');
+
+
+    	    	       });
+    	    	    
+    	    	    $('#zoomimg2').mouseleave(function()
+    	    	      {   
+    	    	          $(this).animate({width: "40%"}, 'slow');
+    	    	   });
+    	    	    
+    	    	    
+    	    	    $('#zoomimg3').mouseenter(function() 
+    	    	    	       {
+    	    	    	       
+    	    	    	          $(this).css("cursor","pointer");
+    	    	    	           $(this).animate({width: "50%", height: "50%"}, 'slow');
+
+
+    	    	    	       });
+    	    	    	    
+    	    	    	    $('#zoomimg3').mouseleave(function()
+    	    	    	      {   
+    	    	    	          $(this).animate({width: "40%"}, 'slow');
+    	    	    	   });
+    
+    </script>
   
   </body>
 </html>

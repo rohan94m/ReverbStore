@@ -13,7 +13,7 @@
     <!-- Bootstrap -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
     
-
+<link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,14 +31,14 @@
   <body>
     <!-- Navigation -->
 <%@ include file="header1.jsp" %>
- <br>
+ 
  <!-- Section 1 -->
  <div class="container" id="section1">
-
+<br>
         <div class="row">
 
             <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead text-uppercase">Acoustic Guitars</p>
+                <p class="lead text-uppercase"><strong>Acoustic Guitars</strong></p>
                 <div class="list-group">
                     <a href="#section1" class="list-group-item" style="background:#DCDCDC">Acoustic</a>
                     <a href="#section2" class="list-group-item">Electric</a>
@@ -53,7 +53,7 @@
 
                 <div class="row jumbotron">
 
-                     <img  src="http://placehold.it/800x300" alt="">
+                     <img class="img-responsive" src="<c:url value="/resources/img/guitars/acousticcover.jpg"/>" alt="">
                           
                 </div>
               </div>
@@ -133,19 +133,20 @@
             </div>
             
             <!-- section 1 -->
-            <br>
-            <br>
-            <br>
-            <br>
+           
+           
             
             
             <!-- Section 2 -->
  <div class="container" id="section2">
-
+ <br>
+            <br>
+             <br>
+            <br>
         <div class="row">
 
             <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead text-uppercase">Electric Guitars</p>
+                <p class="lead text-uppercase"><strong>Electric Guitars</strong></p>
                 <div class="list-group">
                     <a href="#section1" class="list-group-item">Acoustic</a>
                     <a href="#section2" class="list-group-item" style="background:#DCDCDC">Electric </a>
@@ -160,7 +161,7 @@
 
                 <div class="row jumbotron">
 
-                     <img  src="http://placehold.it/800x300" alt="">
+                     <img class="img-responsive" src="<c:url value="/resources/img/guitars/electriccover.jpg"/>" alt="">
                           
                 </div>
               </div>
@@ -240,18 +241,18 @@
             </div>
             
             <!-- section 2 -->
-            <br>
-            <br>
-            <br>
-            <br>
+            
             <!-- section 3 -->
             
  <div class="container" id="section3">
-
+<br>
+            <br>
+            <br>
+            <br>
         <div class="row">
 
             <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead">Bass</p>
+                <p class="lead"><strong>Bass Guitars</strong></p>
                 <div class="list-group">
                     <a href="#section1" class="list-group-item" >Acoustic</a>
                     <a href="#section2" class="list-group-item">Electric</a>
@@ -266,7 +267,7 @@
 
                 <div class="row jumbotron">
 
-                     <img  src="http://placehold.it/800x300" alt="">
+                     <img class="img-responsive" src="<c:url value="/resources/img/guitars/basscover.jpg"/>" alt="">
                           
                 </div>
               </div>
