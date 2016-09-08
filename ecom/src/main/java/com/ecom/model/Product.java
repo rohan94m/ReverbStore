@@ -11,22 +11,32 @@ public class Product {
 	@Id @GeneratedValue @Column
 	private int id;
 	@Column
-	private String model_name;
+	private String name;
 	@Column
 	private String brand;
 	@Column
 	private long price;
+	@Column
+	private String category;
+	public Product(String name, String brand, long price, String category) {
+	
+		this.name = name;
+		this.brand = brand;
+		this.price = price;
+		this.category = category;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getModel_name() {
-		return model_name;
+	
+	public String getName() {
+		return name;
 	}
-	public void setModel_name(String model_name) {
-		this.model_name = model_name;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getBrand() {
 		return brand;

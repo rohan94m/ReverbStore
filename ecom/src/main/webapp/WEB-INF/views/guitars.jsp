@@ -51,11 +51,10 @@
 		
             <div class="col-md-9">
 
-                <div class="row jumbotron">
+                <div class="row jumbotron acoustic">
 
                      <img class="img-responsive" src="<c:url value="/resources/img/guitars/acousticcover.jpg"/>" alt="">
-                          
-                </div>
+              
               </div>
               
 		</div>

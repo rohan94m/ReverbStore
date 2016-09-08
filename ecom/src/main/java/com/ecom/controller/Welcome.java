@@ -6,13 +6,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 class Welcome
 {
+	
+	
+	
 	@RequestMapping(value={"", "/", "welcome"})
 	public ModelAndView welcomeScreen()
 	{
 		return new ModelAndView("index");
 		
 	}
-	
 	
 	@RequestMapping("/login")
 	public ModelAndView loginScreen()
@@ -21,12 +23,8 @@ class Welcome
 		
 	}
 	
-	@RequestMapping("/signup")
-	public ModelAndView signupScreen()
-	{
-		return new ModelAndView("signup");
-		
-	}
+	
+	
 	@RequestMapping("/guitars")
 	public ModelAndView guitars()
 	{
@@ -52,5 +50,7 @@ class Welcome
 		return new ModelAndView("product");
 		
 	}
+	
+	
 	
 }

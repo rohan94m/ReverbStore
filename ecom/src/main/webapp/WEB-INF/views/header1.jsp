@@ -5,13 +5,17 @@
       .navbar-nav {
     margin: 0;
     
+    
+}
+body {
+    background-color:#F5F5F5;
 }
     </style>
   
   
     <!-- Navigation -->
     
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black;" role="navigation">
         <div class="container">
         <div class="row">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,7 +33,7 @@
             <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1" >
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white">Shop by Category <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white; ">Shop by Category <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="dropdown-header" style="font-size:18px"><strong>Guitars</strong></li>
                           <li><a href="guitars#section1">Acoustic</a></li>
@@ -78,7 +82,7 @@
     <div class="container">
     <br>
         <br>
-        <br>
+        
     </div>
     
     

@@ -22,80 +22,66 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-    <style>
-      .carousel-inner > .item > img,
-      .carousel-inner > .item > a > img {
-      
-      width:45%;
-      margin: auto;
-      }
+   <style>
    
-    
+   #zoomimg{
+  width:150px;
+  height:150px;
+  background:#48e;
+  transition: 0.5s;
 }
-    </style>
+
+#zoomimg:hover{
+  background:#59f;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+   
+   </style>
   </head>
   <body>
     <!-- Navigation -->
 <%@ include file="header1.jsp" %>
-  <!--Carousel -->
+ 
 
+    <!-- /.carousel -->
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" style="background-color:#008080;" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel"  style="background-color:#008080;" data-slide-to="1"></li>
-        <li data-target="#myCarousel" style="background-color:#008080" data-slide-to="2"></li>
-        <li data-target="#myCarousel" style="background-color:#008080;"  data-slide-to="3"></li>
-      </ol>
+<div id="carousel-example" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example" data-slide-to="1"></li>
+    <li data-target="#carousel-example" data-slide-to="2"></li>
+  </ol>
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-    
-        <div class="item active">
-    
-          <a href="product"><img src="<c:url value="/resources/img/slash.jpg"/>"/></a>
-          
-      
-        </div>
-
-        <div class="item">
-          
-           <a href="product"><img src="<c:url value="/resources/img/fender-malibu.jpg"/>"/></a>
-           <div class="carousel-caption">
-        <h3 style="color:dimgrey">Fender Malibu</h3>
-        
+  <div class="carousel-inner">
+    <div class="item active">
+      <a href="#"><img src="<c:url value="/resources/img/Carousel/active.jpg"/>" /></a>
+      <div class="carousel-caption">
+       
       </div>
-        </div>
-
-        <div class="item">
-           <a href="product"><img src="<c:url value="/resources/img/zvex-sonar.jpg"/>"/></a>
-           <div class="carousel-caption">
-        <h3 style="color:dimgrey">Zvex-Sonar Pedal</h3>
-        
-      </div>
-        </div>
-
-        <div class="item">
-        
-           <a href="product"><img src="<c:url value="/resources/img/epiphone-lp.jpg"/>"/></a>
-           
-        </div>
-      </div>
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-    
+    <div class="item">
+      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover2.jpg"/>" /></a>
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover1.jpg"/>" /></a>
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+  </div>
 
-    <!--Carousel-->
+  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+    
     
     
     <!-- Images -->
@@ -104,35 +90,27 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <div class="row"><div class="col-md-2 col-sm-2"></div><div class="col-md-3 col-sm-3"><h4><strong>FEATURED</strong></h4></div>
+
+    <div class="row"><div class="col-md-2 col-sm-2"></div><div class="col-md-3 col-sm-3"><h4><strong>FEATURED BRANDS</strong></h4></div>
     
     <br>
     <br>
-    
+    <br>
     </div>
     
       <div class="row" >
-           <div class="col-md-2 col-sm-2"></div>
-          <div class="col-md-3 col-sm-3">
-            <img id="zoomimg" src="<c:url value="/resources/img/fender.jpg"/>" alt="fender" class="img-circle"/>
-            
-            <h2>Fender Guitars</h2>
-            <p>Exclusive Limited edition</p>
-            <a href="#" class="btn btn-default">Shop Now</a>
+           <div class="col-md-2 col-sm-2 col-xs-12"></div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/gibson.jpg"/>" alt="fender" class="img-circle img-responsive "/></a>
+         
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
-           <img id="zoomimg2" src="<c:url value="/resources/img/epiphone.png"/>" alt="epiphone" class="img-circle"/>
-           <h2>Epiphone Guitars</h2>
-            <p>15% Discount on latest Epiphone Guitar</p>
-            <a href="#" class="btn btn-default">Shop Now</a>
+           <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/fender.png"/>" alt="epiphone" class="img-circle img-responsive"/></a>
+          
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
-            <img id="zoomimg3" src="<c:url value="/resources/img/marshall.jpg"/>" alt="marshall" class="img-circle"/>
-            <h2>Marshall Amps</h2>
-            <p>Acoustic series amps from Marshall</p>
-            <a href="#" class="btn btn-default">Shop Now</a>
+            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/marshall.jpg"/>" alt="marshall" class="img-circle img-responsive"/></a>
+          
           </div>
       </div>
     </div>
@@ -165,51 +143,23 @@
 
     <!-- jQuery and JS included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
   	  <script>
-    $('#zoomimg').mouseenter(function() 
-    	       {
-    	       
-    	          $(this).css("cursor","pointer");
-    	           $(this).animate({width: "50%", height: "50%"}, 'slow');
+   
+    		
+  	  
+  	  
+  	  
+    	    	    	 // Activate Carousel
+    	    	    	    $("#myCarousel").carousel();
 
+    	    	    	    // Enable Carousel Indicators
+    	    	    	    $(".item").click(function(){
+    	    	    	        $("#myCarousel").carousel(1);
+    	    	    	    });
 
-    	       });
-    	    
-    	    $('#zoomimg').mouseleave(function()
-    	      {   
-    	          $(this).animate({width: "40%"}, 'slow');
-    	   });
-    
-    	    
-    	    
-    	    $('#zoomimg2').mouseenter(function() 
-    	    	       {
-    	    	       
-    	    	          $(this).css("cursor","pointer");
-    	    	           $(this).animate({width: "50%", height: "50%"}, 'slow');
-
-
-    	    	       });
-    	    	    
-    	    	    $('#zoomimg2').mouseleave(function()
-    	    	      {   
-    	    	          $(this).animate({width: "40%"}, 'slow');
-    	    	   });
-    	    	    
-    	    	    
-    	    	    $('#zoomimg3').mouseenter(function() 
-    	    	    	       {
-    	    	    	       
-    	    	    	          $(this).css("cursor","pointer");
-    	    	    	           $(this).animate({width: "50%", height: "50%"}, 'slow');
-
-
-    	    	    	       });
-    	    	    	    
-    	    	    	    $('#zoomimg3').mouseleave(function()
-    	    	    	      {   
-    	    	    	          $(this).animate({width: "40%"}, 'slow');
-    	    	    	   });
-    
+    	    	    	    // Enable Carousel Controls
+    	    	    	    $(".left").click(function(){
+    	    	    	        $("#myCarousel").carousel("prev");
+    	    	    	    });
     </script>
   
   </body>

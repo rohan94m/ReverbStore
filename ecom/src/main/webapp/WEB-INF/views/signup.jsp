@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,37 +49,38 @@
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#C0C0C0;"><strong>User Registration</strong></div>
       <div class="panel-body">
-        <form id="signup" method="POST" class="form-horizontal" action="#">
+        <form:form id="signup" method="post" class="form-horizontal" action="registeruser" commandName="registerform" >
           <div class="form-group">
             <label class="col-md-2 control-label" for="email">Email-Id</label>
             <div class="col-md-4">
-              <input type="text" class="form-control" name="email" id="email" placeholder="johndoe@example.com"/>
+              <form:input path="email" cssClass="form-control"  placeholder="johndoe@example.com"/>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-2 control-label" for="fullname">Full Name</label>
             <div class="col-md-4">
-            <input type="text" class="form-control" name="fullname" id="fullname" placeholder="John Doe"/>
+            <form:input type="text" class="form-control" path="fullname" id="fullname" placeholder="John Doe"/>
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" for="city">City</label>
             <div class="col-md-4">
-            <select name="city"  class="form-control" id="city">
+            <form:select name="city" path="city" class="form-control" id="city">
               <option value="">Choose any one</option>
-              <option value="1">Delhi</option>
-              <option value="2">Mumbai</option>
-              <option value="3">Bangalore</option>
-              <option value="4">Chennai</option>
-            </select>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Chennai">Chennai</option>
+            </form:select>
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" for="password">Password</label>
             <div class="col-md-4">
-            <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+            <form:input type="password" class="form-control" path="password" id="password" placeholder="Password"/>
             </div>
         </div>
+       
         <div class="form-group">
             <label class="col-md-2 control-label" for="repeatpassword">Repeat Password</label>
             <div class="col-md-4">
@@ -88,19 +90,19 @@
          <div class="form-group">
             <label class="col-md-2 control-label" for="address">Address</label>
             <div class="col-md-4">
-            <input type="text" class="form-control" name="address" id="address" placeholder="Address"/>
+            <form:input type="text" class="form-control" path="address" id="address" placeholder="Address"/>
             </div>
         </div>
          <div class="form-group">
             <label class="col-md-2 control-label" for="pincode">Pincode</label>
             <div class="col-md-4">
-            <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Pincode"/>
+            <form:input type="text" class="form-control" path="pincode" id="pincode" placeholder="Pincode"/>
             </div>
         </div>
          <div class="form-group">
             <label class="col-md-2 control-label" for="mobile">Mobile</label>
             <div class="col-md-4">
-            <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile no."/>
+            <form:input type="text" class="form-control" path="mobile" id="mobile" placeholder="Mobile no."/>
             </div>
         </div>
          <div class="form-group">
@@ -108,7 +110,7 @@
             <button type="submit" class="btn btn-success">Submit</button>
             </div>
         </div>
-      </form>
+      </form:form>
     </div>
     </div>
     </div>    
