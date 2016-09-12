@@ -62,41 +62,10 @@ hr {
   <body>
   <%@ include file="header1.jsp" %>
   <br>
-  
-  
-  
-  <div class="container">
-  <nav class="navbar navbar-light ">
-  
-   
-    <div>
-      <div  class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a style="color:black" href="#section1"><strong>Overview</strong></a></li>
-          <li><a style="color:black" href="#section2"><strong>Specifications</strong></a></li>
-          <li><a style="color:black" href="#section3"><strong>Similar</strong></a></li>
-        </ul>
-      </div>
-    </div>
-  
-</nav>
- </div> 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <div  id="section1" class="container">
+  <br>
+  <br>
+  <br>
+ <div  id="section1" class="container">
   	
   	<div class="row">
   		
@@ -154,65 +123,12 @@ hr {
    <br>
    
    </div>
-   
-    <div  id="section2" class="container">
-  	
-  	<div class="row">
-  		
-  		<div class="col-sm-5 col-md-5"><hr></div>
-  		<div align="center" class="col-sm-2 col-md-2">
-  <span style="font-size: 20px;">
-    Features
-  </span>
-  </div>
- 		<div class="col-sm-5 col-md-5"><hr></div>
-  	</div>
-  	<br>
-  	<br>
-  	
-  
-  <ul>
-  
- <li><p style="font-size:20px">Construction: Bolt-on</p></li>
-<li><p style="font-size:20px">Body: Agathis</li>
-<li><p style="font-size:20px">Neck: Maple, Modern "U" Shape</li>
 
-<li><p style="font-size:20px">Fretboard: Rosewood</p></li>
-<li><p style="font-size:20px">Frets: 24</p></li>
-<li><p style="font-size:20px">Scale:25 inches</p></li>
-<li><p style="font-size:20px">Inlay: White Dot</p></li>
-<li><p style="font-size:20px">Bridge: EG7BV 6-screw Vintage Tremolo</p> </li>
-<li><p style="font-size:20px">Tuners: Cap covered</p></li>
-<li><p style="font-size:20px">Pickups: EG4B (H-H)</p></li>
-<li><p style="font-size:20px">Electronics: 1 volume, 1 tone, 5way s/w </p></li>
-<li><p style="font-size:20px">Strings: (042-009)</p></li>
-<li><p style="font-size:20px">Hardware: Chrome</p></li>
-<li><p style="font-size:20px">Color: Blue </p></li>
-</ul>
-  
- 
-
-  
-  	</div>
-   
+	<br>
    <br>
-   <br>
+  
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   <div class="container"  id="section3">
+  <div class="container"  id="section3">
    <div class="row">
   		
   		<div class="col-sm-4 col-md-4"><hr></div>
@@ -283,36 +199,7 @@ hr {
 
     <!-- jQuery and js included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
     
-    <script>
-    
-   
-$(document).ready(function(){
-  // Add scrollspy to <body>
-  $('body').scrollspy({target: ".navbar", offset: 50});
 
-  // Add smooth scrolling on all links inside the navbar
-  $("#myNavbar a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    }  // End if
-  });
-});
-</script>
     
   </body>
 </html>

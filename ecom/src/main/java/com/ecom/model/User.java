@@ -4,6 +4,7 @@ package com.ecom.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -11,7 +12,9 @@ import javax.persistence.Id;
 public class User 
 {
 	
-	@Id @GeneratedValue @Column
+	@Id
+	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long user_id;
 	
 	@Column
@@ -81,6 +84,18 @@ public class User
 	}
 	public void setMobile(long mobile) {
 		this.mobile = mobile;
+	}
+	
+	public void setToNull()
+	{
+		this.address="";
+		this.city="";
+		this.fullname="";
+		this.mobile=0;
+		this.pincode=0;
+		this.city="";
+		this.password="";
+		this.email="";
 	}
 		
 	

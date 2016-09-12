@@ -1,5 +1,9 @@
 package com.ecom.dao;
 
+import java.util.List;
+
+import javax.transaction.Transactional;
+
 import org.hibernate.HibernateException; 
 import org.hibernate.Session; 
 import org.hibernate.Transaction;
@@ -20,7 +24,7 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	@Transactional
 	public void save(User u) {
 		
 		Session session=factory.openSession();
@@ -100,6 +104,38 @@ public class UserDaoImpl implements UserDao {
 
 	public void setFactory(SessionFactory factory) {
 		this.factory = factory;
+	}
+
+	
+	@SuppressWarnings("unchecked")
+	public List<User> getAllUsers() {
+		List<User> users = null;
+		Session session=factory.openSession();
+		Transaction tx=null;
+		try
+		{
+			tx=session.beginTransaction();
+			users=(List<User>)session.createCriteria(User.class).list();
+			tx.commit();
+			
+		}
+		catch(HibernateException e)
+		{
+			if(tx!=null)
+			{
+				tx.rollback();
+			}
+		
+		e.printStackTrace();
+	}
+	
+	finally
+	{
+		session.close();
+	}
+		return users;
+	
+		
 	}
 	
 	

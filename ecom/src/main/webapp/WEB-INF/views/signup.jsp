@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+ <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +25,7 @@
 
     <![endif]-->
  
+
     
   </head>
   <body>
@@ -41,7 +43,7 @@
       </div>
     </div>
 
-
+	
 
   
     <!--Signup -->
@@ -49,11 +51,11 @@
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#C0C0C0;"><strong>User Registration</strong></div>
       <div class="panel-body">
-        <form:form id="signup" method="post" class="form-horizontal" action="registeruser" commandName="registerform" >
+        <form:form id="signup" method="post" class="form-horizontal"  action="registeruser" commandName="registerform" >
           <div class="form-group">
             <label class="col-md-2 control-label" for="email">Email-Id</label>
             <div class="col-md-4">
-              <form:input path="email" cssClass="form-control"  placeholder="johndoe@example.com"/>
+              <form:input path="email" cssClass="form-control"   placeholder="johndoe@example.com"/>
             </div>
           </div>
           <div class="form-group">
@@ -113,8 +115,14 @@
       </form:form>
     </div>
     </div>
+    <c:if test="${successmg=='Registered Succesfully'}">
+    <h2><c:out value="${successmg }"></c:out></h2>
+    
+    
+    </c:if>
+    
     </div>    
-
+    
 <!--Footer-->
     <br>
     <br>
@@ -129,8 +137,8 @@
 
 
 <!-- jQuery and js included from header.jsp(necessary for Bootstrap's JavaScript plugins) -->
-   
-  
+
+
     
   </body>
 </html>

@@ -16,12 +16,14 @@ class Welcome
 		
 	}
 	
+	
 	@RequestMapping("/login")
 	public ModelAndView loginScreen()
 	{
 		return new ModelAndView("login");
 		
 	}
+	
 	
 	
 	

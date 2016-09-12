@@ -1,8 +1,10 @@
 package com.ecom.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,14 +28,31 @@ public class UserHandleController {
 	
 	
 	@RequestMapping(value = "/registeruser",method=RequestMethod.POST)
-	public String adduser(@ModelAttribute("registerform") User user,Model model)
+	public ModelAndView adduser(@ModelAttribute("registerform") User user,ModelMap model)
 	{
-		
+
 		
 		newuser.save(user);
-	return "index";
+		model.addAttribute("successmg", "Registered Succesfully");
+		user.setToNull();
+		return  new ModelAndView("signup");
 		
 	}
+	
+	@RequestMapping(value="/getusers")
+	public void displayUsers()
+	{
+		List<User> userlist=null;
+		userlist=newuser.getAllUsers();
+		
+		for(int i=0;i<userlist.size();i++)
+		{
+			
+			System.out.println(userlist.get(i).getFullname()+" "+userlist.get(i).getAddress()+" "+userlist.get(i).getEmail());
+		}
+		
+	}
+	
 	
 	
 }
