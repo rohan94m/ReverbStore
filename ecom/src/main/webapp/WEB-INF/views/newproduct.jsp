@@ -107,14 +107,12 @@
       </form:form>
     </div>
     </div>
-    
+    <c:if test="${successmg=='Added Succesfully'}">
+    <h2><c:out value="${successmg }"></c:out></h2>
+   	</c:if> 
     
     </div>
-     <c:if test="${successmg=='Added Succesfully'}">
-    <h2><c:out value="${successmg }"></c:out></h2>
-    
-    
-    </c:if>    
+       
 
 <!--Footer-->
     <br>

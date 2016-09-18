@@ -13,8 +13,8 @@ public class User
 {
 	
 	@Id
-	@Column
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column
 	private long user_id;
 	
 	@Column

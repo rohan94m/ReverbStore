@@ -27,12 +27,7 @@ class Welcome
 	
 	
 	
-	@RequestMapping("/guitars")
-	public ModelAndView guitars()
-	{
-		return new ModelAndView("guitars");
-		
-	}
+
 	@RequestMapping("/ampsandpedals")
 	public ModelAndView ampspedals()
 	{
@@ -46,12 +41,7 @@ class Welcome
 		
 	}
 	
-	@RequestMapping("/product")
-	public ModelAndView product()
-	{
-		return new ModelAndView("product");
-		
-	}
+	
 	
 	
 	

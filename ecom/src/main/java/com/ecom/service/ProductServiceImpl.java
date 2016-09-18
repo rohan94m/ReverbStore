@@ -26,16 +26,16 @@ public class ProductServiceImpl implements ProductService {
 		newprod.deleteProduct(prodid);
 	}
 
-	public void updateProduct(int prodid) {
+	public void updateProduct(int prodid,Product newproduct) {
 		
-		newprod.updateProduct(prodid);
+		newprod.updateProduct(prodid, newproduct);
 
 	}
 
 	public Product findProductById(int prodid) {
 		
-		newprod.findProductById(prodid);
-		return null;
+		return newprod.findProductById(prodid);
+		
 	}
 
 	public List<Product> getAllProducts() {
@@ -46,4 +46,14 @@ public class ProductServiceImpl implements ProductService {
 		return allproducts;
 	}
 
+	public List<Product> getProductBycategory(String subcat) {
+		
+		List<Product> categoryproducts = null;
+		categoryproducts=newprod.getProductByCategory(subcat);
+		
+		
+		return categoryproducts;
+	}
+
+	
 }

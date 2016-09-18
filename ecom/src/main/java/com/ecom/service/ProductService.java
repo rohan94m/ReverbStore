@@ -9,7 +9,8 @@ public interface ProductService {
 
 	void saveProduct(Product p);
 	void deleteProduct(int prodid);
-	void updateProduct(int prodid);
+	void updateProduct(int prodid,Product newprod);
 	Product findProductById(int prodid);
 	List<Product> getAllProducts();
+	List<Product> getProductBycategory(String subcat);
 }

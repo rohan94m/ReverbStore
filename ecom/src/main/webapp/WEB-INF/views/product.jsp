@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,7 +73,7 @@ hr {
   		<div class="col-sm-5 col-md-5"><hr></div>
   		<div align="center" class="col-sm-2 col-md-2">
   <span style="font-size: 20px;">
-    Product Name
+    <c:out value="${prodbrand} ${prodname}"></c:out>
   </span>
  
 </div>
@@ -87,17 +88,17 @@ hr {
     <div class="col-md-3"></div>
   	</div>
   	<div class="row">
-  	<h4 class="text-muted" align="center">Brand Name</h4>
+  	<h4 class="text-muted" align="center"><c:out value="${prodbrand}"></c:out></h4>
    </div>
     <div class="row">
-  	<h3 class=" text-uppercase" align="center"><strong>Model</strong></h3>
+  	<h3 class=" text-uppercase" align="center"><strong><c:out value="${prodname}"></c:out></strong></h3>
    </div>
    
    <br>
     <div class="row">
     <div class="col-sm-2 col-md-2"></div>
     <div class="col-sm-8 col-md-8">
-  	<p class="text-muted text-uppercase" align="justify">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+  	<p class="text-muted text-uppercase" align="center"><c:out value="${proddescription}"></c:out></p>
    	</div>
    <div class="col-sm-2 col-md-2"></div>
    
@@ -107,7 +108,7 @@ hr {
                         
     <div class="col-sm-2 col-md-2"> </div>
     <div class="col-sm-8 col-md-8">
-  	<div class=" lead " align="center"><strong>$24.99</strong></div>
+  	<div class=" lead " align="center"><strong>$<c:out value="${prodprice}"></c:out></strong></div>
    </div>
    <div class="col-sm-2 col-md-2"></div>
    </div>

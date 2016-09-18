@@ -22,7 +22,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-    
+    <script src="<c:url value="/resources/js/angular.min.js" />"></script>
     
     </head>
   <body>
@@ -44,8 +44,10 @@
 <div class="container">
 <br>
 <br>
+
+<div ng-app ="mainApp" ng-controller="productController">
 <div class="table-responsive">
-<table class="table">
+<table class="table table-hover table-striped ">
     <thead>
       <tr>
         <th>Product Id</th>
@@ -54,54 +56,44 @@
         <th>Category</th>
         <th>Price</th>
         <th>Remaining pieces</th>
+        <th>Supplier</th>
+        <th>Operations</th>
       </tr>
     </thead>
-    <tbody id="dynamicTable">   
-    
-    </tbody>
+    <tbody>
+   			<tr ng-repeat="p in productlist">
+   			<td>{{p.product_id}}</td>
+   			<td>{{p.name}}</td>
+   			<td>{{p.brand}}</td>
+   			<td>{{p.category}}</td>
+   			<td>{{p.price}}</td>
+   			<td>{{p.qty}}</td>
+   			<td>{{p.suppliername}}</td>
+   			<td><a href="#" title="increment quantity"><span class="glyphicon glyphicon-plus"></span></a> &nbsp <a href="#" title="edit details"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp
+   			<a href="#" title="delete"><span class="glyphicon glyphicon-trash"></span></a> </td>
+   			</tr>
+
+
+
+
+
+   		</tbody>
 </table>
+</div>
 </div>
  </div>
  
  <script>	
- var json ='${products}';
- var products=JSON.parse(json);
- var table="";
  
- $.each(products,function(i,item){
-	 table+="<tr>";
-	 table+="<td>";
-	 table+=item.product_id;
-	 table+="</td>";
-
-	 table+="<td>";
-	 table+=item.name;
-	 table+="</td>";
+ var mainApp = angular.module("mainApp", []);
+ mainApp.controller("productController", function($scope){
 	 
-	 table+="<td>";
-	 table+=item.brand;
-	 table+="</td>";
-	 
-	 table+="<td>";
-	 table+=item.category;
-	 table+="</td>";
-
-	 table+="<td>";
-	 table+=item.price;
-	 table+="</td>";
-
-	 table+="<td>";
-	 table+=item.qty;
-	 table+="</td>";
-
-	 
-	 table+="</tr>";
+	 var json ='${products}';
+	 var products=JSON.parse(json); 
+	 $scope.productlist=products;
 	 
 	 
  });
-	 
- 
- document.getElementById("dynamicTable").innerHTML=table;
  
 	
 		

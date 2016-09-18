@@ -13,6 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ecom.model.Product;
@@ -69,6 +70,84 @@ public class ProductHandleController {
 		
 		
 		return new ModelAndView("productcontrol");
+		
+	}
+	
+	
+	@RequestMapping(value="/deleteprod" ,method=RequestMethod.GET)
+	public ModelAndView deleteProduct()
+	{
+		
+		
+		
+		
+		return null;
+		
+	}
+	
+	
+	
+	
+	@RequestMapping(value="/guitars", method=RequestMethod.GET)
+	public ModelAndView guitars(Model model)
+	{
+		
+		ObjectMapper mapper = new ObjectMapper();
+		List<Product> acoustic;
+		List<Product> electric;
+		List<Product> bass;
+		
+		acoustic=newproduct.getProductBycategory("Acoustic Guitar");
+		electric=newproduct.getProductBycategory("Electric Guitar");
+		bass=newproduct.getProductBycategory("Bass Guitar");
+		try {
+			String acousticproducts=mapper.writeValueAsString(acoustic);
+			System.out.println(acousticproducts);
+			model.addAttribute("acoustic", acousticproducts);
+			
+			String electricproducts=mapper.writeValueAsString(electric);
+			System.out.println(electricproducts);
+			model.addAttribute("electric", electricproducts);
+			
+			
+			String bassproducts=mapper.writeValueAsString(bass);
+			System.out.println(bassproducts);
+			model.addAttribute("bass", bassproducts);
+			
+			
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return new ModelAndView("guitars");
+		
+	}
+	
+	
+	
+	@RequestMapping(value="/product",method=RequestMethod.GET)
+	public ModelAndView product(@RequestParam("productid") String idParam1, Model model)
+	{	
+		Product p=null;
+		int prodid=Integer.parseInt(idParam1);
+		System.out.println(prodid);
+		p=newproduct.findProductById(prodid);
+		System.out.println(p.getName());
+		model.addAttribute("prodname",p.getName());
+		model.addAttribute("prodprice",p.getPrice());
+		model.addAttribute("prodbrand",p.getBrand());
+		model.addAttribute("proddescription",p.getDescription());
+		model.addAttribute("prodcategory",p.getCategory());
+		return new ModelAndView("product");
+		
 		
 	}
 	
