@@ -126,7 +126,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{p.price}}</h4>
-                                <h4><a href="product">{{p.name}}</a>
+                                <h4><a href="product?productid={{p.product_id}}">{{p.name}}</a>
                                 </h4>
                                 <p>{{p.description}}</p>
                             </div>
@@ -182,7 +182,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{b.price}}</h4>
-                                <h4><a href="product">{{b.name}}</a>
+                                <h4><a href="product?productid={{p.product_id}}">{{b.name}}</a>
                                 </h4>
                                 <p>{{b.description}}</p>
                             </div>

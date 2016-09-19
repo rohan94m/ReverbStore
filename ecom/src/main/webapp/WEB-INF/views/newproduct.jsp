@@ -46,7 +46,7 @@
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#C0C0C0;"><strong>Add a new product</strong></div>
       <div class="panel-body">
-        <form:form id="savenewproduct" method="post" class="form-horizontal" action="savenewproduct" commandName="productadd" >
+        <form:form id="savenewproduct" enctype="multipart/form-data" method="post" class="form-horizontal" action="savenewproduct" commandName="productadd" >
           <div class="form-group">
             <label class="col-md-2 control-label" for="productname">Product Name</label>
             <div class="col-md-4">
@@ -97,6 +97,12 @@
             <label class="col-md-2 control-label" for="qty">Quantity</label>
             <div class="col-md-4">
             <form:input type="text" path="qty" class="form-control"  id="qty" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="imgfile">Upload an Image</label>
+            <div class="col-md-4">
+            <form:input path="imgfile" type="file" name="file" />
             </div>
         </div>
          <div class="form-group">

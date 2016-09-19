@@ -21,6 +21,8 @@
         <property name="suffix" value=".jsp" />  
     </bean>  
     
+    <bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
     
     <bean id="DataSource" class="org.apache.commons.dbcp.BasicDataSource"
 	destroy-method="close">

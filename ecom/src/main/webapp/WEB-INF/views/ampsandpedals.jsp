@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,22 +28,23 @@
       position: relative;
   }
    </style>
+   <script src="<c:url value="/resources/js/angular.min.js" />"></script>
   </head>
-  <body>
+ <body ng-app ="mainApp">
     <!-- Navigation -->
 <%@ include file="header1.jsp" %>
  
  <!-- Section 1 -->
- <div class="container" id="section1">
+ <div class="container" id="section1" >
 <br>
-        <div class="row">
+        <div class="row" >
 
-            <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead text-uppercase"><strong>Amps</strong></p>
+            <div class="col-md-3 scrollable" id="myscrollbar"  >
+                <p class="lead text-uppercase"><strong>Amplifiers</strong></p>
                 <div class="list-group">
-                    <a href="#section1" class="list-group-item" style="background:#DCDCDC">Amps</a>
-                    <a href="#section2" class="list-group-item">Effect Pedals</a>
-                    <a href="#section3" class="list-group-item">Processors</a>
+                    <a href="#section1" class="list-group-item" style="background:#DCDCDC">Amplifiers</a>
+                    <a href="#section2" class="list-group-item">Processors</a>
+                    <a href="#section3" class="list-group-item">Pedals</a>
                     
                 </div>
             </div>
@@ -51,77 +53,25 @@
 		
             <div class="col-md-9">
 
-                <div class="row jumbotron">
+                <div class="row jumbotron acoustic">
 
                      <img class="img-responsive" src="<c:url value="/resources/img/amps/ampcover.jpg"/>" alt="">
-                          
-                </div>
+              
               </div>
               
 		</div>
+		</div>
 		<br>
-                <div class="row">
+                <div class="row"  ng-controller="productController">
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="p in ampslist">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="product">First Product</a>
+                                <h4 class="pull-right">{{p.price}}</h4>
+                                <h4><a href="product?productid={{p.product_id}}">{{p.name}}</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="product">Second Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="product">Third Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$84.99</h4>
-                                <h4><a href="product">Fourth Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$94.99</h4>
-                                <h4><a href="product">Fifth Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>{{p.description}}</p>
                             </div>
                             
                         </div>
@@ -133,129 +83,24 @@
             </div>
             
             <!-- section 1 -->
-            
+           
+           
             
             
             <!-- Section 2 -->
  <div class="container" id="section2">
-<br>
-            <br>
-            <br>
-            <br>
-        <div class="row">
-
-            <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead text-uppercase"><strong>EFFECT PEDALs</strong></p>
-                <div class="list-group">
-                    <a href="#section1" class="list-group-item">Amps</a>
-                    <a href="#section2" class="list-group-item" style="background:#DCDCDC">Effect Pedals </a>
-                    <a href="#section3" class="list-group-item">Processors</a>
-                    
-                </div>
-            </div>
-        
-       
-		
-            <div class="col-md-9">
-
-                <div class="row jumbotron">
-
-                     <img class="img-responsive" src="<c:url value="/resources/img/amps/processorcover.jpg"/>" alt="">
-                          
-                </div>
-              </div>
-              
-		</div>
-		<br>
-                <div class="row">
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="product">First Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="product">Second Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="product">Third Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$84.99</h4>
-                                <h4><a href="product">Fourth Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$94.99</h4>
-                                <h4><a href="product">Fifth Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                   
-                </div>
-
-            </div>
-            
-            <!-- section 2 -->
-           
-            <!-- section 3 -->
-            
- <div class="container" id="section3">
  <br>
             <br>
-            <br>
+             <br>
             <br>
         <div class="row">
 
             <div class="col-md-3 scrollable" id="myscrollbar">
-                <p class="lead"><strong>PROCESSORS</strong></p>
+                <p class="lead text-uppercase"><strong>Pedals</strong></p>
                 <div class="list-group">
-                    <a href="#section1" class="list-group-item" >Amps</a>
-                    <a href="#section2" class="list-group-item">Effect Pedals</a>
-                    <a href="#section3" class="list-group-item" style="background:#DCDCDC">Processors</a>
+                    <a href="#section1" class="list-group-item">Amps</a>
+                    <a href="#section2" class="list-group-item" style="background:#DCDCDC">Pedals </a>
+                    <a href="#section3" class="list-group-item">Proccessor</a>
                     
                 </div>
             </div>
@@ -273,68 +118,16 @@
               
 		</div>
 		<br>
-                <div class="row">
+               <div class="row"  ng-controller="productController2">
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="p in pedalslist">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="product">First Product</a>
+                                <h4 class="pull-right">{{p.price}}</h4>
+                                <h4><a href="product?productid={{p.product_id}}">{{p.name}}</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="product">Second Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="product">Third Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$84.99</h4>
-                                <h4><a href="product">Fourth Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$94.99</h4>
-                                <h4><a href="product">Fifth Product</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>{{p.description}}</p>
                             </div>
                             
                         </div>
@@ -342,10 +135,67 @@
 
                    
                 </div>
+               
 
             </div>
             
+            <!-- section 2 -->
             
+            <!-- section 3 -->
+            
+ 		<div class="container" id="section3">
+			<br>
+            <br>
+            <br>
+            <br>
+        	
+        	<div class="row">
+
+	            <div class="col-md-3 scrollable" id="myscrollbar">
+	                <p class="lead"><strong>Processors</strong></p>
+	                <div class="list-group">
+	                    <a href="#section1" class="list-group-item" >Amps</a>
+	                    <a href="#section2" class="list-group-item">Pedals</a>
+	                    <a href="#section3" class="list-group-item" style="background:#DCDCDC">Processors</a>
+	                    
+	                </div>
+	            </div>
+	        
+       
+		
+	            <div class="col-md-9">
+	
+	                <div class="row jumbotron">
+	
+	                     <img class="img-responsive" src="<c:url value="/resources/img/amps/processorcover.jpg"/>" alt="">
+	                          
+	                </div>
+	              </div>
+	              
+				</div>
+				<br>
+				<div class="row"  ng-controller="productController3">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="b in processorslist">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">{{b.price}}</h4>
+                                <h4><a href="product?productid={{p.product_id}}">{{b.name}}</a>
+                                </h4>
+                                <p>{{b.description}}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                   
+                </div>
+                
+              
+              
+            
+            </div>
             
             <!-- section 3 -->
             <br>
@@ -369,6 +219,53 @@
 
 
     <!-- jQuery and js included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
+    
+     <script>	
+ 
+ var mainApp = angular.module("mainApp", []);
+ mainApp.controller("productController", function($scope){
+	 
+	 var jsonamps ='${amps}';
+	 var amps=JSON.parse(jsonamps); 
+	 $scope.ampslist=amps;
+
+	 
+	
+	 
+ });
+ 
+ 
+ 
+ mainApp.controller("productController2", function($scope){
+	 
+	
+
+	 
+	 var jsonpedals ='${pedals}';
+	 var pedals=JSON.parse(jsonpedals); 
+	 $scope.pedalslist=pedals;
+	 
+	 
+	
+ });
+ 
+ 
+
+ mainApp.controller("productController3", function($scope){
+	 
+
+	 
+	 var jsonprocessors ='${processors}';
+	 var processors=JSON.parse(jsonprocessors); 
+	 $scope.processorslist=processors;
+	 
+ });
+
+
+ 
+	
+		
+</script>
     <script>
     
    

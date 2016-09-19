@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
@@ -33,6 +36,14 @@ public class Product {
 	
 	@Column
 	private int qty;
+	
+	@Column
+	private String imgname;
+	
+	@Transient
+	private MultipartFile imgfile;
+	
+	
 	
 	
 	
@@ -85,6 +96,18 @@ public class Product {
 	}
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+	public String getImgname() {
+		return imgname;
+	}
+	public void setImgname(String imgname) {
+		this.imgname = imgname;
+	}
+	public MultipartFile getImgfile() {
+		return imgfile;
+	}
+	public void setImgfile(MultipartFile imgfile) {
+		this.imgfile = imgfile;
 	}
 	public void setToNull() {
 		this.brand="";

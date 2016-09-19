@@ -1,5 +1,6 @@
 package com.ecom.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ecom.model.Product;
@@ -25,6 +27,7 @@ public class ProductHandleController {
 	@Autowired 
 	ProductServiceImpl newproduct;
 	
+	
 	@RequestMapping(value="/newproduct", method=RequestMethod.GET)
 	public ModelAndView saveProduct()
 	{
@@ -33,9 +36,34 @@ public class ProductHandleController {
 	}
 	
 	
+	private String saveDirectory = "C:/projectuploads/images/";
+	
 	@RequestMapping(value="/savenewproduct",method=RequestMethod.POST)
 	public ModelAndView saveNewProduct(@ModelAttribute("productadd") Product newprod,ModelMap model)
 	{	
+		
+		MultipartFile multipartFile=newprod.getImgfile();
+		String imgname="";
+		imgname=multipartFile.getOriginalFilename();
+		newprod.setImgname(imgname);
+		System.out.println(multipartFile.getOriginalFilename());
+		
+		if (!multipartFile.getOriginalFilename().equals("")) {
+			try {
+				multipartFile.transferTo(new File(saveDirectory + multipartFile.getOriginalFilename()));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	 
+		
+		else
+		{
+			System.out.println("file is empty");
+		}
 		
 		newproduct.saveProduct(newprod);
 		model.addAttribute("successmg", "Added Succesfully");
@@ -132,6 +160,51 @@ public class ProductHandleController {
 	}
 	
 	
+	@RequestMapping(value="/ampsandpedals", method=RequestMethod.GET)
+	public ModelAndView ampsAndPedals(Model model)
+	{
+		
+		ObjectMapper mapper = new ObjectMapper();
+		List<Product> amps;
+		List<Product> pedals;
+		List<Product> processors;
+		
+		amps=newproduct.getProductBycategory("Amplifiers");
+		pedals=newproduct.getProductBycategory("Pedals");
+		processors=newproduct.getProductBycategory("Processors");
+		try {
+			String ampproducts=mapper.writeValueAsString(amps);
+			System.out.println(ampproducts);
+			model.addAttribute("amps", ampproducts);
+			
+			String pedalproducts=mapper.writeValueAsString(pedals);
+			System.out.println(pedalproducts);
+			model.addAttribute("pedals", pedalproducts);
+			
+			
+			String processorproducts=mapper.writeValueAsString(processors);
+			System.out.println(processorproducts);
+			model.addAttribute("processors", processorproducts);
+			
+			
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return new ModelAndView("ampsandpedals");
+		
+	}
+	
+	
+	
 	
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	public ModelAndView product(@RequestParam("productid") String idParam1, Model model)
@@ -151,7 +224,10 @@ public class ProductHandleController {
 		
 	}
 	
-
+	
+	
+	
+	
 	
 	
 }

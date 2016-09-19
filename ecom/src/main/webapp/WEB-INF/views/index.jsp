@@ -48,43 +48,44 @@
 
     <!-- /.carousel -->
 
-<div id="carousel-example" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example" data-slide-to="1"></li>
-    <li data-target="#carousel-example" data-slide-to="2"></li>
-  </ol>
-
-  <div class="carousel-inner">
-    <div class="item active">
-      <a href="#"><img src="<c:url value="/resources/img/Carousel/active.jpg"/>" /></a>
-      <div class="carousel-caption">
-       
-      </div>
-    </div>
-    <div class="item">
-      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover2.jpg"/>" /></a>
-      <div class="carousel-caption">
-        
-      </div>
-    </div>
-    <div class="item">
-      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover1.jpg"/>" /></a>
-      <div class="carousel-caption">
-        
-      </div>
-    </div>
-  </div>
-
-  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
+	<div class="container">
+		<div id="carousel-example" class="carousel slide" data-ride="carousel">
+	  	<ol class="carousel-indicators">
+	    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example" data-slide-to="1"></li>
+	    <li data-target="#carousel-example" data-slide-to="2"></li>
+	  </ol>
+	
+	  <div class="carousel-inner">
+	    <div class="item active">
+	      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover1.jpg"/>" /></a>
+	      <div class="carousel-caption">
+	       
+	      </div>
+	    </div>
+	    <div class="item">
+	      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover2.jpg"/>" /></a>
+	      <div class="carousel-caption">
+	        
+	      </div>
+	    </div>
+	    <div class="item">
+	      <a href="#"><img src="<c:url value="/resources/img/Carousel/active.jpg"/>" /></a>
+	      <div class="carousel-caption">
+	        
+	      </div>
+	    </div>
+	  </div>
+	
+	  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
     
-    
+    </div>
     
     <!-- Images -->
 
@@ -93,7 +94,7 @@
     <br>
     <br>
 
-    <div class="row"><div class="col-md-2 col-sm-2"></div><div class="col-md-3 col-sm-3"><h4><strong>FEATURED BRANDS</strong></h4></div>
+    <div class="row"><div class="col-sm-2 col-xs-5"></div><div class="col-xs-12 col-md-3 " ><h5 style="color:black"><em><strong>Featured Brands</strong></em></h5></div>
     
     <br>
     <br>
@@ -101,17 +102,21 @@
     </div>
     
       <div class="row" >
-           <div class="col-md-2 col-sm-2 col-xs-12"></div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/gibson.jpg"/>" alt="fender" class="img-circle img-responsive "/></a>
+           
+           <div class="col-xs-12 col-md-2"></div>
+          <div class="col-xs-12 col-md-3">
+            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/gibson.jpg"/>" alt="fender" class="img-circle img-fluid "/></a>
          
           </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-           <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/fender.png"/>" alt="epiphone" class="img-circle img-responsive"/></a>
+          
+          <div class="col-xs-12 col-md-3">
+           <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/fender.png"/>" alt="epiphone" class="img-circle img-fluid"/></a>
           
           </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/marshall.jpg"/>" alt="marshall" class="img-circle img-responsive"/></a>
+          
+          
+          <div class="col-xs-12 col-md-3">
+            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/marshall.jpg"/>" alt="marshall" class="img-circle img-fluid"/></a>
           
           </div>
       </div>

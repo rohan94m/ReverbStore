@@ -25,15 +25,6 @@ class Welcome
 	}
 	
 	
-	
-	
-
-	@RequestMapping("/ampsandpedals")
-	public ModelAndView ampspedals()
-	{
-		return new ModelAndView("ampsandpedals");
-		
-	}
 	@RequestMapping("/accesories")
 	public ModelAndView category()
 	{
