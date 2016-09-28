@@ -83,7 +83,8 @@ hr {
   	<div class="row">
   	<div class="col-md-3"></div>
   	<div class="col-md-6">
-  	<img class="img-responsive" src="<c:url value="/resources/img/fender-malibu.jpg"/>" alt="" width=800px height=300px>
+  	
+  	<img class="img-responsive" src="<c:url value="/resources/img/uploads/${imgname}"/>" alt="" width=800px height=300px>
     </div>
     <div class="col-md-3"></div>
   	</div>

@@ -4,12 +4,14 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.hibernate.HibernateException; 
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session; 
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.hibernate.SessionFactory;
+
 import com.ecom.model.User;
 
 
@@ -20,9 +22,46 @@ public class UserDaoImpl implements UserDao {
 	private SessionFactory factory;
 	
 	
-	public User findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User findByEmail(String email) {
+	
+		
+		Session session=factory.openSession();
+		Transaction tx=null;
+		User u=null;
+		System.out.println("Email being seached"+email);
+		//UserRole role=null;
+		try
+		{
+			tx=session.beginTransaction();
+			System.out.println("FINDING ROLE");
+			
+			u = (User) session.load(User.class, new String(email));
+
+			
+			
+			System.out.println(u.getEmail());
+			System.out.println(u.getPassword());
+			System.out.println(u.getRole().getRole());
+		
+			tx.commit();
+		}
+		catch(HibernateException e)
+		{
+		
+		
+		e.printStackTrace();
+		}
+		
+		finally{
+			
+			session.close();
+			}
+		
+		return u;
+		
+		
+		
+		
 	}
 	@Transactional
 	public void save(User u) {
@@ -66,35 +105,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	public void delete(Integer id) {
-		Session session=factory.openSession();
-		Transaction tx=null;
-		User user=new User();
-		user.setUser_id(id);
-		try
-		{
-			tx=session.beginTransaction();
-			session.delete(user);
-			tx.commit();
-			
-			
-		}
-		
-		catch(HibernateException e)
-		{
-			if(tx!=null)
-			{
-				tx.rollback();
-			}
-			
-			e.printStackTrace();
-		}
-		
-		finally
-		{
-			session.close();
-		}
-		
-		
+	
+	//todo	
 		
 	}
 
@@ -135,6 +147,36 @@ public class UserDaoImpl implements UserDao {
 	}
 		return users;
 	
+		
+	}
+	public User isValidUser(String email, String pass) {
+		
+		Session session=factory.openSession();
+		Transaction tx=null;
+		User u=null;
+		try
+		{
+			tx=session.beginTransaction();
+			String hql="from User where email = :emailid and password = :pass";
+			Query query=session.createQuery(hql);
+			query.setString("emailid", email);
+			query.setString("password", pass);
+			u=(User) query.uniqueResult();
+			tx.commit();
+		}
+		catch(HibernateException e)
+		{
+		
+		
+		e.printStackTrace();
+		}
+		
+		finally{
+			
+			session.close();
+			}
+		
+		return u;
 		
 	}
 	

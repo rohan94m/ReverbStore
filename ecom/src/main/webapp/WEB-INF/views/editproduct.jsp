@@ -28,8 +28,8 @@
     
   </head>
   <body>
-	
-	<%@ include file="header1.jsp" %>
+  
+  	<%@ include file="header1.jsp" %>
    
     <br>
     <br>
@@ -37,41 +37,51 @@
 
     <div class="container">
       <div class="jumbotron">
-        <h1>Add Product</h1> 
+        <h1>Edit Product</h1> 
         <p>Insert all required details </p> 
       </div>
     </div>
     
- <!--Product details -->
     <div class="container">
     
+    <img class="img-responsive" src="<c:url value="/resources/img/uploads/${imgname}"/>" alt="" width=800px height=300px>
+    <br>
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#C0C0C0;"><strong>Add a new product</strong></div>
       <div class="panel-body">
-        <form:form id="savenewproduct" enctype="multipart/form-data" method="post" class="form-horizontal" action="savenewproduct" commandName="productadd" >
+        <form:form id="editproduct" enctype="multipart/form-data" method="post" class="form-horizontal" action="editandsaveproduct" commandName="productedit" >
+          <div class="form-group">
+            <label class="col-md-2 control-label" for="productid">Product Id</label>
+            <div class="col-md-4">
+              <form:input type="text" value="${prodid}" path="product_id" id="id" Class="form-control"/>
+            </div>
+          </div>
+          
+          
+          
           <div class="form-group">
             <label class="col-md-2 control-label" for="productname">Product Name</label>
             <div class="col-md-4">
-              <form:input type="text"  path="name" id="name" Class="form-control"/>
+              <form:input type="text" value="${prodname}" path="name" id="name" Class="form-control"/>
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-2 control-label" for="brand">Product Brand</label>
             <div class="col-md-4">
-            <form:input type="text" path="brand" class="form-control"  id="brand" />
+            <form:input type="text" value="${prodbrand}" path="brand" class="form-control"  id="brand" />
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" for="price">Price</label>
             <div class="col-md-4">
-            <form:input path="price" type="text" class="form-control"  id="price" />
+            <form:input path="price" value="${prodprice}" type="text" class="form-control"  id="price" />
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" for="category">Category</label>
             <div class="col-md-4">
-            <form:select name="category" path="category"  class="form-control" id="city">
-              
+            <form:select name="category"  path="category"  class="form-control" id="city">
+              <option value="${prodcategory}">${prodcategory}</option>
               <option value="Acoustic Guitar">Acoustic Guitar</option>
               <option value="Electric Guitar">Electric Guitar</option>
               <option value="Bass Guitar">Bass Guitar</option>
@@ -86,43 +96,63 @@
          <div class="form-group">
             <label class="col-md-2 control-label" for="description">Description</label>
             <div class="col-md-4">
-            <form:input type="text" path="description" class="form-control"  id="description"/>
+            <form:input type="text" value="${proddescription}" path="description" class="form-control"  id="description"/>
             </div>
         </div>
          <div class="form-group">
             <label class="col-md-2 control-label" for="suppliername">Supplier Name</label>
             <div class="col-md-4">
-            <form:input type="text" path="suppliername" class="form-control"  id="suppliername" />
+            <form:input type="text" value="${prodsupplier}" path="suppliername" class="form-control"  id="suppliername" />
             </div>
         </div>
          <div class="form-group">
             <label class="col-md-2 control-label" for="qty">Quantity</label>
             <div class="col-md-4">
-            <form:input type="text" path="qty" class="form-control"  id="qty" />
+            <form:input type="text" value="${prodqty}" path="qty" class="form-control"  id="qty" />
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label" for="imgfile">Upload an Image</label>
+            <label class="col-md-2 control-label" for="imgfile">New Image</label>
             <div class="col-md-4">
             <form:input path="imgfile" type="file" name="file" />
             </div>
         </div>
          <div class="form-group">
             <div class="col-md-6 col-md-offset-2">
-            <button type="submit" class="btn btn-success">Add Item</button>
+            <button type="submit" class="btn btn-success">Save details</button>
             </div>
         </div>
       </form:form>
     </div>
     </div>
-    <c:if test="${successmg=='Added Succesfully'}">
+    <c:if test="${successmg=='Details Saved'}">
     <h2><c:out value="${successmg }"></c:out></h2>
    	</c:if> 
     
     </div>
-       
-
-<!--Footer-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--Footer-->
     <br>
     <br>
     <br>

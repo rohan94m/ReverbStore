@@ -66,7 +66,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="p in ampslist">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img width="320px" height="240px" class="img-responsive" src="<c:url value="/resources/img/uploads/{{p.imgname}}"/>" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{p.price}}</h4>
                                 <h4><a href="product?productid={{p.product_id}}">{{p.name}}</a>
@@ -122,7 +122,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="p in pedalslist">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img width="320px" height="240px" class="img-responsive" src="<c:url value="/resources/img/uploads/{{p.imgname}}"/>" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{p.price}}</h4>
                                 <h4><a href="product?productid={{p.product_id}}">{{p.name}}</a>
@@ -178,7 +178,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="b in processorslist">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                             <img width="320px" height="240px" class="img-responsive" src="<c:url value="/resources/img/uploads/{{b.imgname}}"/>" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{b.price}}</h4>
                                 <h4><a href="product?productid={{p.product_id}}">{{b.name}}</a>

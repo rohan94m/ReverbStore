@@ -45,7 +45,7 @@
       <list>
         <value>com.ecom.model.User</value>
         <value>com.ecom.model.Product</value>
-        
+        <value>com.ecom.model.UserRole</value>
 
          </list>
     </property>
@@ -59,6 +59,7 @@
 
 
 	<mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
+	
  	<mvc:annotation-driven />
  	
 </beans>

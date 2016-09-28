@@ -36,17 +36,17 @@
       <div class="panel panel-default">
         <div class="panel-heading" style="background-color:#C0C0C0;"><strong>Login</strong></div>
         <div class="panel-body">
-          <form id="login" method="POST" class="form-horizontal" action="#">
+          <form id="login"  class="form-horizontal" method="POST" action="<c:url value='/j_spring_security_check'/>">
             <div class="form-group">
               <label class="col-md-2 control-label" for="email">Email-Id</label>
               <div class="col-md-4">
-                <input type="text" class="form-control" name="email" id="email" placeholder="johndoe@example.com"/>
+                <input type="text" name="j_username" id="j_username"size="30" maxlength="40" placeholder="johndoe@example.com" />
               </div>
             </div>
             <div class="form-group">
               <label class="col-md-2 control-label" for="password">Password</label>
               <div class="col-md-4">
-              <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+              <input type="password" name="j_password" id="j_password" size="30" maxlength="32" />
               </div>
             </div>
             <div class="form-group">

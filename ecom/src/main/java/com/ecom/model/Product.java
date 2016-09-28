@@ -116,6 +116,7 @@ public class Product {
 		this.price=null;
 		this.name="";
 		this.suppliername="";
+		this.qty=0;
 		
 	}
 	

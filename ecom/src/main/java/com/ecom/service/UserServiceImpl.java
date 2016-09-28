@@ -18,10 +18,6 @@ public class UserServiceImpl implements UserService {
 	UserDaoImpl newuser;
 	
 	
-	public User findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public void save(User u) {
 		 
@@ -47,5 +43,11 @@ public class UserServiceImpl implements UserService {
 		
 		
 		return allusers;
+	}
+
+	@Override
+	public User findByEmail(String email_id) {
+	
+		return newuser.findByEmail(email_id);
 	}
 }

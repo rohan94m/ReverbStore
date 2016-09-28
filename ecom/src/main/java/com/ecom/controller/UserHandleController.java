@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ecom.model.User;
+import com.ecom.model.UserRole;
 import com.ecom.service.UserServiceImpl;
 
 @Controller
@@ -31,7 +32,9 @@ public class UserHandleController {
 	public ModelAndView adduser(@ModelAttribute("registerform") User user,ModelMap model)
 	{
 
-		
+		UserRole r=new UserRole();
+		r.setUserroleid(2);
+		user.setRole(r);
 		newuser.save(user);
 		model.addAttribute("successmg", "Registered Succesfully");
 		user.setToNull();

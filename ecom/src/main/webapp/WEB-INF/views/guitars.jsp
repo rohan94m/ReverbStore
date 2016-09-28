@@ -67,12 +67,12 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="p in acousticlist">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img width="320px" height="240px" class="img-responsive" src="<c:url value="/resources/img/uploads/{{p.imgname}}"/>" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{p.price}}</h4>
                                 <h4><a href="product?productid={{p.product_id}}">{{p.name}}</a>
                                 </h4>
-                                <p>{{p.description}}</p>
+                                <p>{{p.description}}  {{p.imgname}}</p>
                             </div>
                             
                         </div>
@@ -123,7 +123,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="p in electriclist">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img width="320px" height="240px" class="img-responsive" src="<c:url value="/resources/img/uploads/{{p.imgname}}"/>" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{p.price}}</h4>
                                 <h4><a href="product?productid={{p.product_id}}">{{p.name}}</a>
@@ -179,7 +179,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="b in basslist">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img width="320px" height="240px" class="img-responsive" src="<c:url value="/resources/img/uploads/{{p.imgname}}"/>" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">{{b.price}}</h4>
                                 <h4><a href="product?productid={{p.product_id}}">{{b.name}}</a>

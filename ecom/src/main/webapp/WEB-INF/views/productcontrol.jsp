@@ -69,8 +69,8 @@
    			<td>{{p.price}}</td>
    			<td>{{p.qty}}</td>
    			<td>{{p.suppliername}}</td>
-   			<td><a href="#" title="increment quantity"><span class="glyphicon glyphicon-plus"></span></a> &nbsp <a href="#" title="edit details"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp
-   			<a href="#" title="delete"><span class="glyphicon glyphicon-trash"></span></a> </td>
+   			<td><a href="editproduct?productid={{p.product_id}}" title="edit details"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp
+   			<a href="deleteprod?productid={{p.product_id}}" title="delete"><span class="glyphicon glyphicon-trash"></span></a> </td>
    			</tr>
 
 

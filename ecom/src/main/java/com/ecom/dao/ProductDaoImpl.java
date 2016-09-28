@@ -34,7 +34,7 @@ public class ProductDaoImpl implements ProductDao {
 	      try{
 	         tx = session.beginTransaction();
 	         
-	         session.save(p); 
+	         session.saveOrUpdate(p); 
 	         tx.commit();
 	      }catch (HibernateException e) {
 	         if (tx!=null) tx.rollback();
@@ -49,8 +49,7 @@ public class ProductDaoImpl implements ProductDao {
 		
 		Session session=factory.openSession();
 		Transaction tx=null;
-		Product prod=new Product();
-		prod.setProduct_id(prodid);
+		Product prod=findProductById(prodid);
 		
 	
 		try

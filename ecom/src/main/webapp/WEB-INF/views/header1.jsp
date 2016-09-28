@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ page isELIgnored="false"%>
 <style>
    .navbar-inner{
 
@@ -39,15 +41,27 @@ body {
   
     <!-- Navigation -->
     
-     <ul class="nav nav-pills" style="padding-top:4px;background-color:white;">
-      <li class="tab-content" role="presentation"><a href="welcome" style="color:black"><strong>ReverbStore</strong></a></li>
-      <li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span></strong></a></li>
-      
-      <li role="presentation" style="float:right;"><a href="signup" style="color:black"><span class="glyphicon glyphicon-user"></span> <strong>Signup</strong></a></li>
-      <li role="presentation" style="float:right"> <a href="login" style="color:black" ><span class="glyphicon glyphicon-log-in"></span><strong> Login</strong></a></li>
-  </ul>
+     <c:if test="${uname==''}">
+     
+     	<ul class="nav nav-pills" style="padding-top:4px;background-color:white;">
+      		<li class="tab-content" role="presentation"><a href="welcome" style="color:black"><strong>ReverbStore</strong></a></li>
+      		<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span></strong></a></li>
+     		<li role="presentation" style="float:right;"><a href="signup" style="color:black"><span class="glyphicon glyphicon-user"></span> <strong>Signup</strong></a></li>
+      		<li role="presentation" style="float:right"> <a href="login" style="color:black" ><span class="glyphicon glyphicon-log-in"></span><strong>Login</strong></a></li>
+ 	 	</ul>
+   	</c:if>
+     
+     
+     <c:if test="${uname!=''}">
+     	<ul class="nav nav-pills" style="padding-top:4px;background-color:white;">
+      	<li class="tab-content" role="presentation"><a href="welcome" style="color:black"><strong>ReverbStore</strong></a></li>
+      	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span></strong></a></li>
+     	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong>Welcome ${uname}</strong></a></li>
+      	<li role="presentation" style="float:right;"><a href="<c:url value="j_spring_security_logout" />" style="color:black"><span class="glyphicon glyphicon-user"></span> <strong>Logout</strong></a></li>
+      	<li role="presentation" style="float:right"> <a href="#" style="color:black" ><span class="glyphicon glyphicon-log-in"></span><strong>Account</strong></a></li>
+  		</ul>
 
-
+	</c:if>
 
     <nav class="navbar navbar-default" style="background-color:white" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->

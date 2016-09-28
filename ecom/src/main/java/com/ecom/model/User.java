@@ -3,9 +3,10 @@ package com.ecom.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -13,15 +14,11 @@ public class User
 {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column
-	private long user_id;
+	private String email;
 	
 	@Column
 	private String fullname;
-	
-	@Column
-	private String email;
 	
 	public String getEmail() {
 		return email;
@@ -42,12 +39,16 @@ public class User
 	@Column
 	private long mobile;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "userroleid", nullable = false)
+	private UserRole role;
 	
-	public long getUser_id() {
-		return user_id;
+
+	public UserRole getRole() {
+		return role;
 	}
-	public void setUser_id(long user_id) {
-		this.user_id = user_id;
+	public void setRole(UserRole role) {
+		this.role = role;
 	}
 	public String getFullname() {
 		return fullname;
