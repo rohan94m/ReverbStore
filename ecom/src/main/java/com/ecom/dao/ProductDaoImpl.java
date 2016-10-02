@@ -2,8 +2,6 @@ package com.ecom.dao;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session; 
@@ -26,7 +24,7 @@ public class ProductDaoImpl implements ProductDao {
 		this.factory = factory;
 	}
 	
-	@Transactional
+	
 	  public void saveProduct(Product p){
 	      Session session = factory.openSession();
 	      Transaction tx = null;

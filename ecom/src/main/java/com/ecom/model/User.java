@@ -7,6 +7,9 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 
 @Entity
@@ -43,7 +46,19 @@ public class User
 	@JoinColumn(name = "userroleid", nullable = false)
 	private UserRole role;
 	
+	
+	@OneToOne
+	@JoinColumn(name="cartid")
+	@JsonIgnore
+	Cart cart;
+	
 
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public UserRole getRole() {
 		return role;
 	}

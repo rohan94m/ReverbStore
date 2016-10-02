@@ -41,7 +41,7 @@ body {
   
     <!-- Navigation -->
     
-     <c:if test="${uname==''}">
+     <c:if test="${empty personObj}">
      
      	<ul class="nav nav-pills" style="padding-top:4px;background-color:white;">
       		<li class="tab-content" role="presentation"><a href="welcome" style="color:black"><strong>ReverbStore</strong></a></li>
@@ -52,11 +52,11 @@ body {
    	</c:if>
      
      
-     <c:if test="${uname!=''}">
+     <c:if test="${not empty personObj}">
      	<ul class="nav nav-pills" style="padding-top:4px;background-color:white;">
       	<li class="tab-content" role="presentation"><a href="welcome" style="color:black"><strong>ReverbStore</strong></a></li>
       	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span></strong></a></li>
-     	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong>Welcome ${uname}</strong></a></li>
+     	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong>Welcome ${personObj}</strong></a></li>
       	<li role="presentation" style="float:right;"><a href="<c:url value="j_spring_security_logout" />" style="color:black"><span class="glyphicon glyphicon-user"></span> <strong>Logout</strong></a></li>
       	<li role="presentation" style="float:right"> <a href="#" style="color:black" ><span class="glyphicon glyphicon-log-in"></span><strong>Account</strong></a></li>
   		</ul>

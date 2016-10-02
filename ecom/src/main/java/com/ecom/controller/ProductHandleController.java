@@ -20,9 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ecom.model.Product;
-import com.ecom.model.User;
 import com.ecom.service.ProductServiceImpl;
-import com.ecom.service.UserServiceImpl;
 
 @Controller
 public class ProductHandleController {
@@ -30,8 +28,7 @@ public class ProductHandleController {
 	@Autowired 
 	ProductServiceImpl newproduct;
 	
-	@Autowired
-	UserServiceImpl u;
+	
 	
 	
 	@RequestMapping(value="/newproduct", method=RequestMethod.GET)
@@ -197,18 +194,6 @@ public class ProductHandleController {
 	@RequestMapping(value="/guitars", method=RequestMethod.GET)
 	public ModelAndView guitars(Model model,Principal principal)
 	{
-		String name="";
-		try
-		{
-			name=getCurrentUserdetails(principal);
-		}
-		catch(Exception e)
-		{
-			System.out.println("No one logged on");
-			
-		}
-		
-		model.addAttribute("uname",name);
 		
 		
 		
@@ -255,18 +240,7 @@ public class ProductHandleController {
 	
 	@RequestMapping(value="/ampsandpedals", method=RequestMethod.GET)
 	public ModelAndView ampsAndPedals(Model model,Principal principal)
-	{	String name="";
-		try
-		{
-			name=getCurrentUserdetails(principal);
-		}
-		catch(Exception e)
-		{
-			System.out.println("No one logged on");
-			
-		}
-		
-		model.addAttribute("uname",name);
+	{	
 		
 		
 		
@@ -332,16 +306,7 @@ public class ProductHandleController {
 	}
 	
 	
-	private String getCurrentUserdetails(Principal p)
-	{
-		
-		 String name=p.getName();
-		 User current=u.findByEmail(name);
-		 name=current.getFullname();
-		return name;
-		
-	}
-	
+
 	
 	
 	

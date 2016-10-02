@@ -46,7 +46,8 @@
         <value>com.ecom.model.User</value>
         <value>com.ecom.model.Product</value>
         <value>com.ecom.model.UserRole</value>
-
+		<value>com.ecom.model.CartItem</value>
+		<value>com.ecom.model.Cart</value>
          </list>
     </property>
   </bean>
