@@ -115,7 +115,7 @@ hr {
    </div>
    <div class="row">
    
-   <div align="center"><button type="button" class="btn btn-primary btn-lg outline">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></button>
+   <div align="center"><a href="additemtocart?productid=${prodid}" class="btn btn-primary btn-lg outline">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></a>
    </div>
    </div>
    <br>

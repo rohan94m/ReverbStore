@@ -294,6 +294,7 @@ public class ProductHandleController {
 		System.out.println(prodid);
 		p=newproduct.findProductById(prodid);
 		System.out.println(p.getName());
+		model.addAttribute("prodid",p.getProduct_id());
 		model.addAttribute("prodname",p.getName());
 		model.addAttribute("prodprice",p.getPrice());
 		model.addAttribute("prodbrand",p.getBrand());

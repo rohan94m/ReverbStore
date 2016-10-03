@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.hibernate.SessionFactory;
 
-import com.ecom.model.Cart;
+
 import com.ecom.model.User;
 import com.ecom.model.UserRole;
 
@@ -74,15 +74,13 @@ public class UserDaoImpl implements UserDao {
 		role.setUserroleid(2);
 		u.setRole(role);
 		
-		Cart cart=new Cart();
-		cart.setUser(u);
-		u.setCart(cart);
+		
 		
 		try
 		{
 			tx=session.beginTransaction();
 			session.saveOrUpdate(u);
-			session.saveOrUpdate(cart);
+			
 			tx.commit();
 			
 			

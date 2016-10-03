@@ -1,58 +1,61 @@
 package com.ecom.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.*;
 
-@Entity
-public class Cart {
+
+
+public class Cart implements Serializable  {
 	
 	
-	@Id
-    @GeneratedValue
-    private int cartId;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<CartItem> cartItems;
+   
 
-    @OneToOne
-    @JoinColumn(name = "customerId")
-    private User user;
-
-    @Column
+	
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5641723465433254054L;
+	private List<CartItem> cartItems;
     private double grandTotal;
-
-	public int getCartId() {
-		return cartId;
+    private	int cartCount=0; 
+    
+    
+	public int getCartCount() {
+		return cartCount;
 	}
-
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
+	public void setCartCount(int cartCount) {
+		this.cartCount = cartCount;
 	}
-
 	public List<CartItem> getCartItems() {
 		return cartItems;
 	}
-
 	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
 	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public double getGrandTotal() {
 		return grandTotal;
 	}
-
 	public void setGrandTotal(double grandTotal) {
 		this.grandTotal = grandTotal;
 	}
+	
+	public void calcGrandTotal()
+	{
+		double tot=0;
+		
+		for(int i=0;i<cartItems.size();i++)
+		{
+			tot+=cartItems.get(i).getTotalPrice();
+		}
+		this.grandTotal=tot;
+		
+	}
+
+
 	
 	
 
