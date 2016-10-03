@@ -81,7 +81,6 @@
    		
    			<tr ng-repeat="p in productlist">
    			
-   			
    			<td>{{p.product.name}}</td>
    			<td>{{p.product.brand}}</td>
    			<td>{{p.product.category}}</td>
