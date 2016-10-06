@@ -43,88 +43,142 @@
     <!-- Navigation -->
 <%@ include file="header1.jsp" %>
  
- 
+ <div class="container">
+    	
 
-
-    <!-- /.carousel -->
-
-	<div class="container">
-		<div id="carousel-example" class="carousel slide" data-ride="carousel">
-	  	<ol class="carousel-indicators">
-	    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example" data-slide-to="1"></li>
-	    <li data-target="#carousel-example" data-slide-to="2"></li>
-	  </ol>
-	
-	  <div class="carousel-inner">
-	    <div class="item active">
-	      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover1.jpg"/>" /></a>
-	      <div class="carousel-caption">
-	       
-	      </div>
-	    </div>
-	    <div class="item">
-	      <a href="#"><img src="<c:url value="/resources/img/Carousel/cover2.jpg"/>" /></a>
-	      <div class="carousel-caption">
-	        
-	      </div>
-	    </div>
-	    <div class="item">
-	      <a href="#"><img src="<c:url value="/resources/img/Carousel/active.jpg"/>" /></a>
-	      <div class="carousel-caption">
-	        
-	      </div>
-	    </div>
-	  </div>
-	
-	  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left"></span>
-	  </a>
-	  <a class="right carousel-control" href="#carousel-example" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right"></span>
-	  </a>
-	</div>
-    
+    	<br>
+    	<br>
     </div>
-    
-    <!-- Images -->
 
-    <div class="container-fluid" >
+    </div>
+
+   
+
+<div class="container">
+
+
+    <br>
+    <br>
+		   
+            	
+
+            	<div class="row">
+                <div class="col-xs-10 col-sm-6 col-md-6 ">
+                	<h3><strong>Guitars</strong></h3>
+                	<br>
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/1.jpg" />" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/2.jpg" />" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/3.jpg" />" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                <br>
+                <br>    
+                </div>
+
+                <div class="col-xs-10 col-sm-6 col-md-6">
+                	<h3><strong> Pedals</strong></h3>
+                	<br>
+                <div id="carousel-example-generic-1" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic-1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic-1" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic-1" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/1.jpg" />" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/2.jpg" />" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/3.jpg" />" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic-1" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic-1" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                	
+				    
+				</div>
+				</div>
+				<br>
+
+    </div>
+
+     <div class="container" >
     <br>
     <br>
     <br>
 
-    <div class="row"><div class="col-sm-2 col-xs-5"></div><div class="col-xs-12 col-md-3 " ><h5 style="color:black"><em><strong>Featured Brands</strong></em></h5></div>
-    
+    <div class="row">
+    <div class="col-md-1 col-xs-5"></div>
+    <div class="col-xs-12 col-md-3 " ><h3><strong>Featured Brands</strong></h3></div>
+    <br>
     <br>
     <br>
     <br>
     </div>
     
       <div class="row" >
+     
            
-           <div class="col-xs-12 col-md-2"></div>
-          <div class="col-xs-12 col-md-3">
-            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/gibson.jpg"/>" alt="fender" class="img-circle img-fluid "/></a>
+           <div class="col-md-1 col-sm-1 col-xs-3"></div>
+          <div class="col-md-3 col-sm-2 col-xs-8">
+            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/fender.png" />" alt="fender" class="img-circle img-fluid "/></a>
          
           </div>
+          <div class="col-md-1 col-sm-1 col-xs-3"></div>
           
-          <div class="col-xs-12 col-md-3">
-           <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/fender.png"/>" alt="epiphone" class="img-circle img-fluid"/></a>
+          <div class="col-md-3 col-sm-2 col-xs-8">
+           <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/gibson.jpg" />" alt="epiphone" class="img-circle img-fluid"/></a>
+          
+          </div>
+          
+         <div class="col-md-1 col-sm-1 col-xs-3"></div>
+          <div class="col-md-3 col-sm-2 col-xs-8">
+            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/marshall.jpg" />" alt="marshall" class="img-circle img-fluid"/></a>
           
           </div>
           
-          
-          <div class="col-xs-12 col-md-3">
-            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/marshall.jpg"/>" alt="marshall" class="img-circle img-fluid"/></a>
-          
-          </div>
-      </div>
+      
+</div>
+
     </div>
    
-    <!--Images-->
-    
-    <!-- Latest Products -->
     
     
     
@@ -149,24 +203,15 @@
 
 
     <!-- jQuery and JS included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
-  	  <script>
-   		
-    		
-  	  
-  	  
-  	  
-    	    	    	 // Activate Carousel
-    	    	    	    $("#myCarousel").carousel();
+  	
 
-    	    	    	    // Enable Carousel Indicators
-    	    	    	    $(".item").click(function(){
-    	    	    	        $("#myCarousel").carousel(1);
-    	    	    	    });
+   
 
-    	    	    	    // Enable Carousel Controls
-    	    	    	    $(".left").click(function(){
-    	    	    	        $("#myCarousel").carousel("prev");
-    	    	    	    });
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
     </script>
   
   </body>

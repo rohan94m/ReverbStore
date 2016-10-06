@@ -10,6 +10,7 @@ import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ecom.model.BillingAddress;
 import com.ecom.model.Cart;
 import com.ecom.model.CartItem;
 import com.ecom.model.Product;
+import com.ecom.model.ShippingAddress;
 import com.ecom.service.ProductServiceImpl;
 
 @Controller
+@Component
 @SessionAttributes({"personObj","cartObj"})
 public class CartController {
 	
@@ -136,6 +140,54 @@ public class CartController {
 		
 		return new ModelAndView("viewcart");
 	}
+	
+	
+	
+	
+	public Cart validateCart(Cart c) throws IOException
+	{
+		System.out.println("validate reached");
+		
+		if(c == null || c.getCartItems().size()==0){
+            throw new IOException("Cart is empty yo");
+        }
+		
+		/*if(session.getAttribute("personObj")==null)
+		{
+			throw new IOException("User not logged in");
+		}
+		
+		*/
+		
+		
+		
+		return c;
+		
+	}
+	
+	
+	
+	public void processOrder(Cart c, ShippingAddress s, BillingAddress b)
+	{
+		System.out.println("Processing Order");
+		System.out.println("Cart items :");
+		for(int i=0;i<c.getCartItems().size();i++)
+		{
+			
+			System.out.println(c.getCartItems().get(i).getProduct().getName());
+		}
+		
+		
+		System.out.println(s.addressAsString());
+		
+		System.out.println(b.addressAsString());
+		
+		Cart newcart=new Cart();
+		session.setAttribute("cartObj", newcart);
+		
+		
+	}
+	
 	
 
 }

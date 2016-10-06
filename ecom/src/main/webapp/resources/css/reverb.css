@@ -1,0 +1,136 @@
+
+
+
+
+
+
+.brand,
+.address-bar {
+    display: none;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.nav-pills>li>a {
+    
+    padding: 1px;
+    padding-right: 4px;
+    color:white;
+}
+
+
+
+@media screen and (min-width:768px) {
+    .brand {
+        display: inherit;
+        margin: 0;
+        padding: 30px 0 10px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        
+        font-size: 5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff;
+
+
+
+    }
+    .brand:hover, .brand:focus{
+
+        text-decoration: none;
+    color:white;
+
+
+    }
+    
+
+
+    
+   
+
+    .address-bar {
+        display: inherit;
+        margin: 0;
+        padding: 0 0 40px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-transform: uppercase;
+        font-size: 1.25em;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: #fff;
+    }
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 0;
+    }
+
+    .navbar-default {
+        border: none;
+        background: #CD853F;
+        background:black;
+    }
+
+    .nav>li>a {
+        padding: 35px;
+        color:white;
+
+    }
+
+    .nav-pills>li>a {
+    margin-bottom: 0;
+    padding: 1px;
+    padding-right: 4px;
+}
+
+.nav-pills>li> a:hover, .nav-pills>li> a:focus {
+    background-color:dimgrey;
+    color:white;
+        }
+
+    .navbar-nav>li>a {
+        line-height: normal;
+
+    }
+
+    .navbar-nav {
+        display: table;
+        float: none;
+        margin: 0 auto;
+        table-layout: fixed;
+        font-size: 1.10em;
+        
+    }
+
+    .navbar-default .navbar-nav > li > a{
+        color:white;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color:dimgrey;
+    color:white;
+        }
+
+
+}
+
+

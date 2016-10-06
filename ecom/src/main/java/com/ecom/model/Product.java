@@ -1,5 +1,6 @@
 package com.ecom.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -12,7 +13,12 @@ import javax.persistence.Transient;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-public class Product {
+public class Product implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3864477482538088432L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

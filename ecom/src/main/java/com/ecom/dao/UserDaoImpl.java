@@ -9,6 +9,8 @@ import org.hibernate.Query;
 import org.hibernate.Session; 
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.hibernate.SessionFactory;
 
@@ -22,6 +24,8 @@ public class UserDaoImpl implements UserDao {
 
 	@Autowired
 	private SessionFactory factory;
+	 
+	
 	
 	
 	public User findByEmail(String email) {
@@ -73,7 +77,8 @@ public class UserDaoImpl implements UserDao {
 		UserRole role = new UserRole();
 		role.setUserroleid(2);
 		u.setRole(role);
-		
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		u.setPassword(passwordEncoder.encode(u.getPassword()));
 		
 		
 		try

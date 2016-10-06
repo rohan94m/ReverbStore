@@ -1,128 +1,142 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- <%@ page isELIgnored="false"%>
-<style>
-   .navbar-inner{
+<%@ page isELIgnored="false"%>
 
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-
-}
-  
-
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-.dropdown-menu {
-  
-  text-align: center;
-  
-}
-
-.tab-content {
+<link href="<c:url value="/resources/css/reverb.css" />" rel="stylesheet">
+ <style>
+   .bgimg{
     
-    border-right: 1px solid #ddd;
+    background: url('<c:url value="/resources/img/header/bg.jpg" />') no-repeat center center fixed ;
+    background-size: cover;
     
 }
+ 
+   
+   </style>
 
-.nav-pills {
-    margin-bottom: 0;
-}
-body {
-    background-color:white;
-}
-    </style>
+<div class="bgimg">
+
+<c:if test="${empty personObj}">
+	<div class="container-fluid">
+ 
   
   
+  <ul class="nav nav-pills">
+    
+    <c:if test="${empty cartObj }">
+    <li><a href="viewcart"><h6><strong><span class="glyphicon glyphicon-shopping-cart"></span>Cart(0)</strong></h6></a></li>
+    </c:if>
+    
+    <c:if test="${not empty cartObj }">
+    <li><a href="viewcart"><h6><strong><span class="glyphicon glyphicon-shopping-cart"></span>Cart(<c:out value="${cartObj.cartCount}"></c:out>)</strong></h6></a></li>
+    </c:if>
+    
+    <li style="float:right" ><a  href="signup"><h6><strong><span class="glyphicon glyphicon-user"></span> Register &nbsp;</strong></h6></a></li>
+    <li style="float:right"><a href="login"><h6><strong><span class="glyphicon glyphicon-log-in"></span> Login &nbsp;</strong></h6></a></li>
+    
+    
+  </ul>
+</div>
+</c:if>
+
+
+<c:if test="${not empty personObj}">
+	<div class="container-fluid">
+ 
+  
+  
+  	<ul class="nav nav-pills">
+    
+    <c:if test="${empty cartObj }">
+    <li><a href="viewcart"><h5><strong><span class="glyphicon glyphicon-shopping-cart"></span>Cart(0)</strong></h5></a></li>
+    </c:if>
+    
+    <c:if test="${not empty cartObj }">
+    <li><a href="viewcart"><h5><strong><span class="glyphicon glyphicon-shopping-cart"></span>Cart(<c:out value="${cartObj.cartCount}"></c:out>)</strong></h5></a></li>
+    </c:if>
+    <li style="float:right" ><a  href="#"><h5><strong><span class="glyphicon glyphicon-user"></span> ${personObj} &nbsp;</strong></h5></a></li>
+    <li style="float:right"><a href="<c:url value="j_spring_security_logout" />" ><h5><strong><span class="glyphicon glyphicon-log-in"></span> Logout &nbsp;</strong></h5></a></li>
+    
+    
+  </ul>
+</div>
+</c:if>
+
+
+
+    <div><a href="welcome" class="brand">Reverb Store</a></div>
+    <div class="address-bar">Online Guitar Store</div>
+
     <!-- Navigation -->
-    
-     <c:if test="${empty personObj}">
-     
-     	<ul class="nav nav-pills" style="padding-top:4px;background-color:white;">
-      		<li class="tab-content" role="presentation"><a href="welcome" style="color:black"><strong>ReverbStore</strong></a></li>
-      	<c:if test="${empty cartObj }"><li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span>(0)</strong></a></li>
-      	</c:if>	
-      	<c:if test="${not empty cartObj }">
-      	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span>(<c:out value="${cartObj.cartCount}"></c:out> ) </strong></a></li>
-     		</c:if>
-     		<li role="presentation" style="float:right;"><a href="signup" style="color:black"><span class="glyphicon glyphicon-user"></span> <strong>Signup</strong></a></li>
-      		<li role="presentation" style="float:right"> <a href="login" style="color:black" ><span class="glyphicon glyphicon-log-in"></span><strong>Login</strong></a></li>
- 	 	</ul>
-   	</c:if>
-     
-     
-     <c:if test="${not empty personObj}">
-     	<ul class="nav nav-pills" style="padding-top:4px;background-color:white;">
-      	<li class="tab-content" role="presentation"><a href="welcome" style="color:black"><strong>ReverbStore</strong></a></li>
-      	<c:if test="${empty cartObj }"><li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span>(0)</strong></a></li>
-      	</c:if>	
-      	<c:if test="${not empty cartObj }">
-      	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong><span class="glyphicon glyphicon-shopping-cart"></span>(<c:out value="${cartObj.cartCount}"></c:out> ) </strong></a></li>
-     		</c:if>
-     	
-     	<li class="tab-content" role="presentation"><a href="#" style="color:black"><strong>Welcome ${personObj}</strong></a></li>
-      	<li role="presentation" style="float:right;"><a href="<c:url value="j_spring_security_logout" />" style="color:black"><span class="glyphicon glyphicon-user"></span> <strong>Logout</strong></a></li>
-      	<li role="presentation" style="float:right"> <a href="#" style="color:black" ><span class="glyphicon glyphicon-log-in"></span><strong>Account</strong></a></li>
-  		</ul>
-
-	</c:if>
-
-    <nav class="navbar navbar-default" style="background-color:white" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-inner">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-         <a class="navbar-brand " href="welcome" style="color:black" ><span class="glyphicon glyphicon-cd"></span></a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="welcome">Reverb Store</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 <ul class="nav  navbar-nav">
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:black; font-size:15px;"><em><strong>Guitars<b class="caret"></b></strong></em></a>
+              <a href="#" class="dropdown-toggle"  data-toggle="dropdown" >Guitars<b class="caret"></b></a>
               <ul class="dropdown-menu">
-            <li><a  href="guitars#section1" style="color:black; "><em>Acoustic</em></a></li>
-              <li><a href="guitars#section1" style="color:black"><em>Electric</em></a></li>
-              <li><a href="guitars#section1" style="color:black"><em>Bass</em></a></li>
+            <li><a  href="guitars#section1" ><em>Acoustic</em></a></li>
+              <li><a href="guitars#section1"><em>Electric</em></a></li>
+              <li><a href="guitars#section1" ><em>Bass</em></a></li>
               </ul>
             </li>
-          <li><a href="ampsandpedals#section1" style="color:black;"><em><strong>Amplifiers</strong></em></a></li>
-          <li><a href="ampsandpedals#section2" style="color:black; "><em><strong>Pedals</strong></em></a></li>
-          <li><a href="ampsandpedals#section3" style="color:black; "><em><strong>Processors</strong></em></a></li>
-          <li><a href="accesories" style="color:black; "><em><strong>Accessories</strong></em></a></li>
-          <li>
-                        <form class="navbar-form navbar-right" role="search">
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                          
-                          <button type="submit" class="btn btn-default" style="color:black;"><span class="glyphicon glyphicon-search"></span></button>
-                          </div>
-                        </form>
-                    </li>
+          <li><a  href="ampsandpedals#section1" >Amplifiers</a></li>
+          <li><a href="ampsandpedals#section2" >Pedals</a></li>
+          <li><a href="accesories" >Accessories</a></li>
+          
           
         </ul>
-      </div><!-- /.navbar-collapse -->
-      </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+       
+        <!-- /.container -->
     </nav>
+
+
+
+
+    <!-- Carousel -->
+
+    <div class="container">
+    	
+
+    	<br>
+    	<br>
+    </div>
+
+    </div>
     
-   
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<c:url value="/resources/js/jquery.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+    
+    
+    
     

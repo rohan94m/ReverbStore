@@ -45,7 +45,7 @@ class Welcome
 			name=getCurrentUserdetails(principal);
 			ModelAndView modelAndView = new ModelAndView();
 		     modelAndView.setViewName("index");
-		     modelAndView.addObject("personObj", name);
+		     session.setAttribute("personObj", name);
 			return modelAndView;
 			
 		}
@@ -97,7 +97,7 @@ class Welcome
 	@RequestMapping(value="/logout-success")
 	public ModelAndView logoutScreen()
 	{	
-		
+		session.invalidate();
 		
 		return new ModelAndView("logout-success");
 		

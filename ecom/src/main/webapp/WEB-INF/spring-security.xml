@@ -14,15 +14,18 @@
 	<context:component-scan  base-package="com.ecom" />  
 	<mvc:annotation-driven />
 	
-	<http auto-config="true" use-expressions="true">  
+	<beans:bean name="bcryptEncoder"
+	class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	
+	<http auto-config="true" use-expressions="true" >  
 	<csrf disabled="true"/>
     	<intercept-url pattern="/productcontrol" access="hasRole('ROLE_USER')" />
-    	  
+    	   <access-denied-handler error-page="/login"/>
    			
-   			<form-login login-page="/login" default-target-url="/welcome" login-processing-url="/j_spring_security_check" authentication-failure-url="/login?error" username-parameter="j_username" password-parameter="j_password"/>
+   			<form-login login-page="/login" default-target-url="/welcome" login-processing-url="/j_spring_security_check" authentication-failure-url="/login?error" username-parameter="j_username" password-parameter="j_password" always-use-default-target='true'/>
    			
    			 
-   			<logout logout-success-url="/logout-success" logout-url="/j_spring_security_logout" invalidate-session="true" delete-cookies="true"   /> 
+   			<logout logout-success-url="/logout-success" logout-url="/j_spring_security_logout" invalidate-session="true"   /> 
    			
    	</http>  
    	
@@ -31,8 +34,8 @@
       
     <authentication-manager>  
         <authentication-provider user-service-ref="customUserDetailsService">  
-            <password-encoder hash="plaintext">  
-        </password-encoder></authentication-provider>  
+            <password-encoder ref="bcryptEncoder"/> 
+        </authentication-provider>  
     </authentication-manager>  
 	
 

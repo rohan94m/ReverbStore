@@ -28,7 +28,7 @@ public class User
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	@Column
+	@Column(length =100)
 	private String password;
 	
 	@Column
