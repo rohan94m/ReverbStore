@@ -54,7 +54,7 @@
     <li><a href="viewcart"><h5><strong><span class="glyphicon glyphicon-shopping-cart"></span>Cart(<c:out value="${cartObj.cartCount}"></c:out>)</strong></h5></a></li>
     </c:if>
     <li style="float:right" ><a  href="#"><h5><strong><span class="glyphicon glyphicon-user"></span> ${personObj} &nbsp;</strong></h5></a></li>
-    <li style="float:right"><a href="<c:url value="j_spring_security_logout" />" ><h5><strong><span class="glyphicon glyphicon-log-in"></span> Logout &nbsp;</strong></h5></a></li>
+    <li style="float:right"><a href="<c:url value="j_spring_security_logout" />" ><h5><strong><span class="glyphicon glyphicon-log-out"></span> Logout &nbsp;</strong></h5></a></li>
     
     
   </ul>

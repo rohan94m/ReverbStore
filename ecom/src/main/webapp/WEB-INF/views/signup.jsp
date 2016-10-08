@@ -51,7 +51,17 @@
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#C0C0C0;"><strong>User Registration</strong></div>
       <div class="panel-body">
+      
+      
+      
         <form:form id="signup" method="post" class="form-horizontal"  action="registeruser" commandName="registerform" >
+          
+          <div class="form-group">
+           
+          <form:errors path="*" cssStyle="color : red;"/>
+          
+          </div>
+          
           <div class="form-group">
             <label class="col-md-2 control-label" for="email">Email-Id</label>
             <div class="col-md-4">
@@ -89,18 +99,7 @@
             <input type="password" class="form-control" name="repeatpassword" id="repeatpassword" placeholder="Password"/>
             </div>
         </div>
-         <div class="form-group">
-            <label class="col-md-2 control-label" for="address">Address</label>
-            <div class="col-md-4">
-            <form:input type="text" class="form-control" path="address" id="address" placeholder="Address"/>
-            </div>
-        </div>
-         <div class="form-group">
-            <label class="col-md-2 control-label" for="pincode">Pincode</label>
-            <div class="col-md-4">
-            <form:input type="text" class="form-control" path="pincode" id="pincode" placeholder="Pincode"/>
-            </div>
-        </div>
+        
          <div class="form-group">
             <label class="col-md-2 control-label" for="mobile">Mobile</label>
             <div class="col-md-4">
@@ -122,6 +121,27 @@
     </c:if>
     
     </div>    
+    
+    
+    <script>
+    
+    var password = document.getElementById("password")
+    , confirm_password = document.getElementById("repeatpassword");
+
+  function validatePassword(){
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+      confirm_password.setCustomValidity('');
+    }
+  }
+
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
+    
+    
+    </script>
+    
     
 <!--Footer-->
     <br>

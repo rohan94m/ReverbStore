@@ -8,6 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
+
 
 
 
@@ -17,9 +21,11 @@ public class User
 	
 	@Id
 	@Column
+	@NotEmpty(message="Email field is mandatory.")
 	private String email;
 	
 	@Column
+	@NotEmpty(message="Name field is mandatory.")
 	private String fullname;
 	
 	public String getEmail() {
@@ -29,17 +35,17 @@ public class User
 		this.email = email;
 	}
 	@Column(length =100)
+	@NotEmpty(message="Password should not be empty.")
 	private String password;
 	
 	@Column
+	@NotEmpty(message="Please Enter A City")
 	private String city;
 	
+	
 	@Column
-	private String address;
-	@Column
-	private long pincode;
-	@Column
-	private long mobile;
+	@NotEmpty(message="Phone field is mendatory.") @NumberFormat(style= Style.NUMBER)
+	private String mobile;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "userroleid", nullable = false)
@@ -70,32 +76,22 @@ public class User
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public long getPincode() {
-		return pincode;
-	}
-	public void setPincode(long pincode) {
-		this.pincode = pincode;
-	}
-	public long getMobile() {
+
+	
+	
+	public String getMobile() {
 		return mobile;
 	}
-	public void setMobile(long mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	
 	public void setToNull()
 	{
-		this.address="";
+		
 		this.city="";
 		this.fullname="";
-		this.mobile=0;
-		this.pincode=0;
+		this.mobile="";
+		
 		this.city="";
 		this.password="";
 		this.email="";
