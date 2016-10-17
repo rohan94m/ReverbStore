@@ -12,10 +12,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Online Guitar Store</title>
 
-    <!-- Bootstrap -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
-
+  
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +36,7 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Create an Account</h1> 
-        <p>We Currently deliver only to Delhi, Mumbai, Bangalore and Chennai </p> 
+        <p>Enter you details </p> 
       </div>
     </div>
 
@@ -77,13 +74,8 @@
         <div class="form-group">
             <label class="col-md-2 control-label" for="city">City</label>
             <div class="col-md-4">
-            <form:select name="city" path="city" class="form-control" id="city">
-              <option value="">Choose any one</option>
-              <option value="Delhi">Delhi</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Bangalore">Bangalore</option>
-              <option value="Chennai">Chennai</option>
-            </form:select>
+            <form:input name="city" path="city" class="form-control" id="city" />
+              
             </div>
         </div>
         <div class="form-group">
@@ -126,18 +118,18 @@
     <script>
     
     var password = document.getElementById("password")
-    , confirm_password = document.getElementById("repeatpassword");
+    , repeatpassword = document.getElementById("repeatpassword");
 
   function validatePassword(){
     if(password.value != confirm_password.value) {
-      confirm_password.setCustomValidity("Passwords Don't Match");
+      repeatpassword.setCustomValidity("Passwords Don't Match");
     } else {
-      confirm_password.setCustomValidity('');
+      repeatpassword.setCustomValidity('');
     }
   }
 
   password.onchange = validatePassword;
-  confirm_password.onkeyup = validatePassword;
+  repeatpassword.onkeyup = validatePassword;
     
     
     </script>

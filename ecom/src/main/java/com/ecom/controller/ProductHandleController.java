@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ecom.model.Product;
 import com.ecom.service.ProductServiceImpl;
 
+
 @Controller
 public class ProductHandleController {
 
@@ -45,6 +46,10 @@ public class ProductHandleController {
 	@RequestMapping(value="/savenewproduct",method=RequestMethod.POST)
 	public ModelAndView saveNewProduct(@ModelAttribute("productadd") Product newprod,ModelMap model)
 	{	
+	
+		
+		//System.out.println(output);
+		
 		
 		MultipartFile multipartFile=newprod.getImgfile();
 		String imgname="";
@@ -87,7 +92,10 @@ public class ProductHandleController {
 			model.addAttribute("prodname",p.getName());
 			model.addAttribute("prodprice",p.getPrice());
 			model.addAttribute("prodbrand",p.getBrand());
-			model.addAttribute("proddescription",p.getDescription());
+			
+			
+			String desc=p.getDescription();
+			model.addAttribute("proddescription",desc);
 			model.addAttribute("prodcategory",p.getCategory());
 			model.addAttribute("imgname", p.getImgname());
 			model.addAttribute("prodqty", p.getQty());
@@ -107,7 +115,12 @@ public class ProductHandleController {
 	
 	@RequestMapping(value="/editandsaveproduct",method=RequestMethod.POST)
 	public String editSaveProduct(@ModelAttribute("productedit") Product newprod,ModelMap model)
-	{
+	{	
+		
+		
+		//System.out.println(output);
+		
+		
 		Product pnew=newproduct.findProductById(newprod.getProduct_id());
 		String imgnameold=pnew.getImgname();
 		newprod.setImgname(imgnameold);
@@ -197,7 +210,6 @@ public class ProductHandleController {
 		
 		
 		
-		
 		ObjectMapper mapper = new ObjectMapper();
 		List<Product> acoustic;
 		List<Product> electric;
@@ -233,38 +245,32 @@ public class ProductHandleController {
 		}
 		
 		
-		return new ModelAndView("guitars");
+		return new ModelAndView("guitar");
 		
 	}
 	
 	
-	@RequestMapping(value="/ampsandpedals", method=RequestMethod.GET)
-	public ModelAndView ampsAndPedals(Model model,Principal principal)
+	@RequestMapping(value="/pedals", method=RequestMethod.GET)
+	public ModelAndView pedals(Model model)
 	{	
 		
 		
 		
 		ObjectMapper mapper = new ObjectMapper();
-		List<Product> amps;
-		List<Product> pedals;
-		List<Product> processors;
 		
-		amps=newproduct.getProductBycategory("Amplifiers");
+		List<Product> pedals;
+		
+		
+		
 		pedals=newproduct.getProductBycategory("Pedals");
-		processors=newproduct.getProductBycategory("Processors");
+		
 		try {
-			String ampproducts=mapper.writeValueAsString(amps);
-			System.out.println(ampproducts);
-			model.addAttribute("amps", ampproducts);
+			
 			
 			String pedalproducts=mapper.writeValueAsString(pedals);
 			System.out.println(pedalproducts);
 			model.addAttribute("pedals", pedalproducts);
 			
-			
-			String processorproducts=mapper.writeValueAsString(processors);
-			System.out.println(processorproducts);
-			model.addAttribute("processors", processorproducts);
 			
 			
 		} catch (JsonGenerationException e) {
@@ -279,9 +285,118 @@ public class ProductHandleController {
 		}
 		
 		
-		return new ModelAndView("ampsandpedals");
+		return new ModelAndView("pedals");
 		
 	}
+	
+	
+	@RequestMapping(value="/amps", method=RequestMethod.GET)
+	public ModelAndView Amps(Model model)
+	{
+		
+		ObjectMapper mapper = new ObjectMapper();
+		List<Product> amps;
+		
+		
+		amps=newproduct.getProductBycategory("Amplifiers");
+	
+		try {
+			String ampproducts=mapper.writeValueAsString(amps);
+			System.out.println(ampproducts);
+			model.addAttribute("amps", ampproducts);
+			
+			
+			
+			
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return new ModelAndView("amps");
+	}
+	
+	
+	@RequestMapping(value="/accesories", method=RequestMethod.GET)
+	public ModelAndView category(Model model)
+	{
+		
+		ObjectMapper mapper = new ObjectMapper();
+		List<Product> amps;
+		
+		
+		amps=newproduct.getProductBycategory("Accesories");
+	
+		try {
+			String ampproducts=mapper.writeValueAsString(amps);
+			System.out.println(ampproducts);
+			model.addAttribute("amps", ampproducts);
+			
+			
+			
+			
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return new ModelAndView("accesories");
+		
+	}
+	
+	
+	@RequestMapping(value="/featured",method=RequestMethod.GET)
+	public ModelAndView featured(@RequestParam("productbrand") String idParam1, Model model)
+	{
+		List<Product> brandlist=null;
+		brandlist=newproduct.getProductByBrand(idParam1);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		try {
+			String featuredproducts=mapper.writeValueAsString(brandlist);
+			//System.out.println(ampproducts);
+			model.addAttribute("featured", featuredproducts);
+			
+			
+			
+			
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return new ModelAndView("featured");
+		
+		
+	}
+	
+	
+	
 	
 	
 	
@@ -298,9 +413,51 @@ public class ProductHandleController {
 		model.addAttribute("prodname",p.getName());
 		model.addAttribute("prodprice",p.getPrice());
 		model.addAttribute("prodbrand",p.getBrand());
-		model.addAttribute("proddescription",p.getDescription());
+		model.addAttribute("prodqty", p.getQty());
+		
+		
+		String desc=p.getDescription();
+		
+		if(p.getQty()>0)
+		{
+			model.addAttribute("availability","yes");
+		}
+		else
+		{
+			model.addAttribute("availability","no");
+		}
+		
+		model.addAttribute("proddescription",desc);
 		model.addAttribute("prodcategory",p.getCategory());
 		model.addAttribute("imgname", p.getImgname());
+		
+		
+		// For related Products
+		
+		
+		List<Product> related;
+		
+		
+		related=newproduct.getProductBycategory(p.getCategory());
+		if(related.size()>=4)
+		{
+		
+			for(int i=0;i<3;i++)
+			{
+				if(related.get(i).getProduct_id()==p.getProduct_id())
+				{
+					related.remove(i);
+				}
+				
+			}
+			
+			model.addAttribute("related1", related.get(0));   
+			model.addAttribute("related2", related.get(1));
+			model.addAttribute("related3", related.get(2));
+		}
+		
+		
+		
 		return new ModelAndView("product");
 		
 		

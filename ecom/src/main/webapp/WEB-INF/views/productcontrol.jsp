@@ -9,11 +9,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Online Guitar Store</title>
 
-    <!-- Bootstrap -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
-    
-
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +17,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-    <script src="<c:url value="/resources/js/angular.min.js" />"></script>
+   
     
     </head>
   <body>
@@ -99,11 +94,33 @@
 		
 </script>
  	   
+  <!--Footer-->
+    <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+    <!--Footer -->
+	<%@ include file="footer.jsp" %>
+
+
+
+
+    <!-- jQuery and JS included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
+  	
+
+   
+
+  
+  
+  </body>
+</html>    
+ 
  	
  	
    
  	
-<!-- jQuery and JS included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
-  	
-  </body>
-</html>

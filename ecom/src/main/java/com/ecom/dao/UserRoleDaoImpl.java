@@ -28,7 +28,7 @@ public class UserRoleDaoImpl implements UserRoleDao {
 
 		return role;
 		
-		// http://fruzenshtein.com/spring-mvc-security-mysql-hibernate/
+		
 	}
 
 }

@@ -54,6 +54,16 @@ public class ProductServiceImpl implements ProductService {
 		
 		return categoryproducts;
 	}
-
+	
+	public List<Product> getProductByBrand(String subcat) {
+		
+		List<Product> categoryproducts = null;
+		categoryproducts=newprod.getProductByBrand(subcat);
+		
+		
+		return categoryproducts;
+	}
+	
+	 
 	
 }

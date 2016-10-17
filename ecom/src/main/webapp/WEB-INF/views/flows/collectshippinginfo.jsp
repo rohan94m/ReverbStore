@@ -11,9 +11,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Online Guitar Store</title>
 
-    <!-- Bootstrap -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,6 +19,18 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
+    
+  
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     
   </head>
@@ -44,45 +53,56 @@
 
         <br/>
         
-         <div class="page-header">
-            <h1>Customer</h1>
+        
+        
+     </div>
+     
+     <div class="container">
 
-
-            <p class="lead">Customer Details:</p>
-        </div>
-
-        <form:form commandName="shippingAddress" class="form-horizontal">
+        <form:form name="myForm" commandName="shippingAddress" class="form-horizontal">
 
         <h3>Shipping Address:</h3>
 
         <div class="form-group">
-            <label for="shippingStreet">Street Name</label>
-            <form:input path="streetName" id="shippingStreet" class="form-Control" />
+            <label class="col-md-2 control-label" for="shippingStreet">Street Name</label>
+            <div class="col-md-4">
+            <form:input path="streetName" name="shippingStreet" id="shippingStreet" class="form-Control"    />
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="shippingApartmentNumber">Apartment Number</label>
-            <form:input path="apartmentNumber" id="shippingApartmentNumber" class="form-Control" />
+            <label class="col-md-2 control-label" for="shippingApartmentNumber">Apartment Number</label>
+            <div class="col-md-4">
+            <form:input path="apartmentNumber"  id="shippingApartmentNumber" class="form-Control" />
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="shippingCity">City</label>
+            <label class="col-md-2 control-label" for="shippingCity">City</label>
+            <div class="col-md-4">
             <form:input path="city" id="shippingCity" class="form-Control" />
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="shippingState">State</label>
+            <label class="col-md-2 control-label"  for="shippingState">State</label>
+            <div class="col-md-4">
             <form:input path="state" id="shippingState" class="form-Control" />
+            </div>
         </div>
 
-        <div class="form-group">
-            <label for="shippingCountry">Country</label>
+        <div  class="form-group">
+            <label class="col-md-2 control-label"  for="shippingCountry">Country</label>
+            <div class="col-md-4">
             <form:input path="country" id="shippingCountry" class="form-Control" />
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="shippingZip">Zipcode</label>
+            <label class="col-md-2 control-label"  for="shippingZip">Zipcode</label>
+            <div class="col-md-4">
             <form:input path="zipCode" id="shippingZip" class="form-Control" />
+            </div>
         </div>
 
         <input type="hidden" name="_flowExecutionKey" />
@@ -91,7 +111,7 @@
 
         
 
-        <input type="submit" value="Next" class="btn btn-default" name="_eventId_shippingDetailCollected" />
+        <input type="submit"  value="Next" class="btn btn-default" name="_eventId_shippingDetailCollected" />
 
         <button class="btn btn-default" name="_eventId_cancel">Cancel</button>
 
@@ -100,35 +120,8 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!--Footer-->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+<!--Footer-->
     <br>
     <br>
     <br>
@@ -141,19 +134,9 @@
 
 
 
+<!-- jQuery and js included from header.jsp(necessary for Bootstrap's JavaScript plugins) -->
 
 
-
-
-
-
-
-
-
-<!-- jQuery and js included from header.jsp (necessary for Bootstrap's JavaScript plugins) -->
-    
-   
     
   </body>
 </html>
-  

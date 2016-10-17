@@ -1,5 +1,6 @@
 
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,9 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Online Guitar Store</title>
 
-    <!-- Bootstrap -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
+  
     
 
 
@@ -50,7 +49,7 @@
     	<br>
     </div>
 
-    </div>
+   
 
    
 
@@ -66,7 +65,7 @@
                 <div class="col-xs-10 col-sm-6 col-md-6 ">
                 	<h3><strong>Guitars</strong></h3>
                 	<br>
-                    <div id="carousel-example-generic" class="carousel slide">
+                    <div id="carousel-example-generic" class="carousel  slide car1">
                         <!-- Indicators -->
                         <ol class="carousel-indicators hidden-xs">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -77,13 +76,15 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/1.jpg" />" alt="">
+                              <a href="guitars">  <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/1.jpg" />" alt="">
+                            	</a>
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/2.jpg" />" alt="">
-                            </div>
+                                <a href="guitars"><img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/2.jpg" />" alt="">
+                            </a></div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/3.jpg" />" alt="">
+                              <a href="guitars">  <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/1/3.jpg" />" alt="">
+								</a>                            
                             </div>
                         </div>
 
@@ -102,7 +103,7 @@
                 <div class="col-xs-10 col-sm-6 col-md-6">
                 	<h3><strong> Pedals</strong></h3>
                 	<br>
-                <div id="carousel-example-generic-1" class="carousel slide">
+                <div id="carousel-example-generic-1" class="carousel slide car2">
                         <!-- Indicators -->
                         <ol class="carousel-indicators hidden-xs">
                             <li data-target="#carousel-example-generic-1" data-slide-to="0" class="active"></li>
@@ -113,14 +114,14 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/1.jpg" />" alt="">
-                            </div>
+                               <a href="pedals"> <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/1.jpg" />" alt="">
+                            </a></div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/2.jpg" />" alt="">
-                            </div>
+                                <a href="pedals"><img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/2.jpg" />" alt="">
+                            </a></div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/3.jpg" />" alt="">
-                            </div>
+                                <a href="pedals"><img class="img-responsive img-full" src="<c:url value="/resources/img/Carousel/2/3.jpg" />" alt="">
+                            </a></div>
                         </div>
 
                         <!-- Controls -->
@@ -158,19 +159,19 @@
            
            <div class="col-md-1 col-sm-1 col-xs-3"></div>
           <div class="col-md-3 col-sm-2 col-xs-8">
-            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/fender.png" />" alt="fender" class="img-circle img-fluid "/></a>
+            <a href="featured?productbrand=Fender"><img id="zoomimg" src="<c:url value="/resources/img/featured/fender.png" />" alt="fender" class="img-circle img-fluid "/></a>
          
           </div>
           <div class="col-md-1 col-sm-1 col-xs-3"></div>
           
           <div class="col-md-3 col-sm-2 col-xs-8">
-           <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/gibson.jpg" />" alt="epiphone" class="img-circle img-fluid"/></a>
+           <a href="featured?productbrand=Gibson"><img id="zoomimg" src="<c:url value="/resources/img/featured/gibson.jpg" />" alt="epiphone" class="img-circle img-fluid"/></a>
           
           </div>
           
          <div class="col-md-1 col-sm-1 col-xs-3"></div>
           <div class="col-md-3 col-sm-2 col-xs-8">
-            <a href="#"><img id="zoomimg" src="<c:url value="/resources/img/featured/marshall.jpg" />" alt="marshall" class="img-circle img-fluid"/></a>
+            <a href="featured?productbrand=Marshall"><img id="zoomimg" src="<c:url value="/resources/img/featured/marshall.jpg" />" alt="marshall" class="img-circle img-fluid"/></a>
           
           </div>
           
@@ -180,7 +181,7 @@
     </div>
    
     
-    
+   
     
     
     
@@ -209,7 +210,11 @@
 
     <!-- Script to Activate the Carousel -->
     <script>
-    $('.carousel').carousel({
+    $('.car1').carousel({
+        interval: 4500 //changes the speed
+    })
+    
+     $('.car2').carousel({
         interval: 5000 //changes the speed
     })
     </script>

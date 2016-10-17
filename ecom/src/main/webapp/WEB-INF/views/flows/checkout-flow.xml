@@ -24,7 +24,7 @@
       
       <action-state id="addCartToOrder">
         <evaluate expression="cartController.validateCart(checkoutcart)"  />
-        <transition to="InvalidCartWarning" on-exception="java.io.IOException" />
+        <transition to="EmptyCartWarning" on-exception="java.io.IOException" />
         <transition to="collectShippingDetail" />
     </action-state>
       
@@ -46,14 +46,29 @@
       
       <action-state id="processOrder">
         <evaluate expression="cartController.processOrder(checkoutcart,shippingAddress,billingAddress)" />
+        <transition to="InvalidCartWarning" on-exception="java.io.IOException" />
         <transition to="thankCustomer" />
     </action-state>
     
     <view-state id="thankCustomer" >
         <transition to="endState" />
     </view-state>
+    
+    <view-state id="EmptyCartWarning">
+        <transition to="endState" />
+    </view-state>
+    
+    <view-state id="InvalidCartWarning">
+        <transition to="endState" />
+    </view-state>
 
     <end-state id="endState" />
+    
+     <end-state id="cancelCheckout" view="checkOutCancelled.jsp" />
+
+    <global-transitions>
+        <transition on="cancel" to="cancelCheckout" />
+    </global-transitions>
       
       
       

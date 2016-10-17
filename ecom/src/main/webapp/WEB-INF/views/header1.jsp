@@ -1,7 +1,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false"%>
 
+
+
+ <!-- Bootstrap -->
+ <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/reverb.css" />" rel="stylesheet">
+
+<script src="<c:url value="/resources/js/angular.min.js" />"></script>
+
  <style>
    .bgimg{
     
@@ -53,7 +61,7 @@
     <c:if test="${not empty cartObj }">
     <li><a href="viewcart"><h5><strong><span class="glyphicon glyphicon-shopping-cart"></span>Cart(<c:out value="${cartObj.cartCount}"></c:out>)</strong></h5></a></li>
     </c:if>
-    <li style="float:right" ><a  href="#"><h5><strong><span class="glyphicon glyphicon-user"></span> ${personObj} &nbsp;</strong></h5></a></li>
+    <li style="float:right" ><a  href="useraccount"><h5><strong><span class="glyphicon glyphicon-user"></span> ${personObj} &nbsp;</strong></h5></a></li>
     <li style="float:right"><a href="<c:url value="j_spring_security_logout" />" ><h5><strong><span class="glyphicon glyphicon-log-out"></span> Logout &nbsp;</strong></h5></a></li>
     
     
@@ -91,8 +99,8 @@
               <li><a href="guitars#section1" ><em>Bass</em></a></li>
               </ul>
             </li>
-          <li><a  href="ampsandpedals#section1" >Amplifiers</a></li>
-          <li><a href="ampsandpedals#section2" >Pedals</a></li>
+          <li><a  href="amps" >Amplifiers</a></li>
+          <li><a href="pedals" >Pedals</a></li>
           <li><a href="accesories" >Accessories</a></li>
           
           

@@ -167,24 +167,82 @@ public class CartController {
 	
 	
 	
-	public void processOrder(Cart c, ShippingAddress s, BillingAddress b)
+	
+	
+	
+	
+	public void processOrder(Cart c, ShippingAddress s, BillingAddress b) throws IOException
 	{
-		System.out.println("Processing Order");
-		System.out.println("Cart items :");
-		for(int i=0;i<c.getCartItems().size();i++)
+		Product p=new Product();
+		if(checkIfCartValid(c))
 		{
+			System.out.println("Processing Order");
+			System.out.println("Cart items :");
+			for(int i=0;i<c.getCartItems().size();i++)
+			{
+				p=c.getCartItems().get(i).getProduct();
+				int newqty=c.getCartItems().get(i).getQuantity();
+				newqty=prod.findProductById(p.getProduct_id()).getQty()-newqty;
+				
+				
+				p.setQty(newqty);
+				prod.updateProduct(p.getProduct_id(),p);
+				System.out.println(c.getCartItems().get(i).getProduct().getName());
+			}
 			
-			System.out.println(c.getCartItems().get(i).getProduct().getName());
+			
+			System.out.println(s.addressAsString());
+			
+			System.out.println(b.addressAsString());
+			
+			Cart newcart=new Cart();
+			session.setAttribute("cartObj", newcart);
+		}
+		
+		else
+		{
+			throw new IOException("Cart is invalid");
 		}
 		
 		
-		System.out.println(s.addressAsString());
+	}
+	
+	
+	private boolean checkIfCartValid(Cart c)
+	{
+		int flag=0;
+		Product p=new Product();
+		List<CartItem> newCartList=c.getCartItems();
+		for(int i=0;i<c.getCartItems().size();i++)
+		{
+			p=c.getCartItems().get(i).getProduct();
+			int qt=c.getCartItems().get(i).getQuantity();
+			System.out.println("Quantity of this item is"+qt);
+			int newqty=c.getCartItems().get(i).getQuantity();
+			if(newqty>prod.findProductById(p.getProduct_id()).getQty())
+			{
+				newCartList.remove(i);
+				int temp=c.getCartCount()-qt;
+				c.setCartCount(temp);
+				flag++;
+			}
+			
+			
+		}
 		
-		System.out.println(b.addressAsString());
 		
-		Cart newcart=new Cart();
-		session.setAttribute("cartObj", newcart);
+		if(flag>0)
+		{
+			c.setCartItems(newCartList);
+			c.calcGrandTotal();
+			session.setAttribute("cartObj", c);
+			return false;
+		}
 		
+		else
+		{
+			return true;
+		}
 		
 	}
 	

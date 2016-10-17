@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -46,6 +47,7 @@ public class Product implements Serializable {
 	@Column
 	private String imgname;
 	
+	@JsonIgnore
 	@Transient
 	private MultipartFile imgfile;
 	

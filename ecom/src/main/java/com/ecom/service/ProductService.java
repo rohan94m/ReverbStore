@@ -13,4 +13,5 @@ public interface ProductService {
 	Product findProductById(int prodid);
 	List<Product> getAllProducts();
 	List<Product> getProductBycategory(String subcat);
+	 List<Product> getProductByBrand(String brand);
 }

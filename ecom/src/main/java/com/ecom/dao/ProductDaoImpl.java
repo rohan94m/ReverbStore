@@ -202,6 +202,37 @@ public class ProductDaoImpl implements ProductDao {
 		}
 		return guitars;
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<Product> getProductByBrand(String brand){
+		List<Product> guitars = null;
+		Session session=factory.openSession();
+		Transaction tx=null;
+		
+		try{
+			tx=session.beginTransaction();
+			String hql="from Product where brand = :cat";
+			
+			Query query=session.createQuery(hql);
+			query.setString("cat", brand);
+			guitars=(List<Product>)query.list();
+		}
+		catch(HibernateException e)
+		{
+			if(tx!=null)
+			{
+				tx.rollback();
+			}
+			e.printStackTrace();
+		}
+	
+		finally
+		{
+			session.close();
+		}
+		return guitars;
+	}
 
 	
 	

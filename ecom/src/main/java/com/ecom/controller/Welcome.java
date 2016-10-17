@@ -43,9 +43,24 @@ class Welcome
 		try
 		{
 			name=getCurrentUserdetails(principal);
+			
+			
 			ModelAndView modelAndView = new ModelAndView();
-		     modelAndView.setViewName("index");
+		    
 		     session.setAttribute("personObj", name);
+		     
+		     
+		     User current=u.findByEmail(principal.getName());
+		     if(current.getRole().getUserroleid()==1)
+		     {
+		    	 modelAndView.setViewName("adminhome");
+		    	 
+		     }
+		     else
+		     {
+		    	 modelAndView.setViewName("index");
+		     }
+		     
 			return modelAndView;
 			
 		}
@@ -76,12 +91,7 @@ class Welcome
 	}
 	
 	
-	@RequestMapping("/accesories")
-	public ModelAndView category()
-	{
-		return new ModelAndView("accesories");
-		
-	}
+	
 	
 	
 	private String getCurrentUserdetails(Principal p)
@@ -103,6 +113,14 @@ class Welcome
 		
 	}
 	
+	@RequestMapping(value="/invalidCredentials")
+	public ModelAndView invalidScreen()
+	{	
+		
+		
+		return new ModelAndView("invalidCredentials");
+		
+	}
 	
 	
 	
