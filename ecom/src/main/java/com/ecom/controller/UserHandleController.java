@@ -57,6 +57,7 @@ public class UserHandleController {
 	{
 		 if(result.hasErrors()){
 		model.addAttribute("errors", "Registered Succesfully");
+		 return  new ModelAndView("signup");
 
 		 }
 		 else
@@ -64,9 +65,10 @@ public class UserHandleController {
 		newuser.save(user);
 		model.addAttribute("successmg", "Registered Succesfully");
 		user.setToNull();
+		return  new ModelAndView("signupsuccess");
 		
 		 }
-		 return  new ModelAndView("signup");
+		 
 		
 	}
 	

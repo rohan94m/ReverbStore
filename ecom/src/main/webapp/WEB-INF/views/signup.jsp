@@ -106,11 +106,7 @@
       </form:form>
     </div>
     </div>
-    <c:if test="${successmg=='Registered Succesfully'}">
-    <h2><c:out value="${successmg }"></c:out></h2>
     
-    
-    </c:if>
     
     </div>    
     
@@ -121,7 +117,7 @@
     , repeatpassword = document.getElementById("repeatpassword");
 
   function validatePassword(){
-    if(password.value != confirm_password.value) {
+    if(password.value != repeatpassword.value) {
       repeatpassword.setCustomValidity("Passwords Don't Match");
     } else {
       repeatpassword.setCustomValidity('');
